@@ -1,0 +1,60 @@
+
+#SliderWrapper{
+	height:300px;
+	position:relative;
+	
+	
+	/* fallback */ 
+	background-color: #CCC; background: url(images/linear_bg_2.png); background-repeat: repeat-x; 
+	/* Firefox 3.6+ */ 
+	background: -moz-linear-gradient(100% 100% 90deg, #2F2727, #CCC); 
+	/* Safari 4-5, Chrome 1-9 */ /* -webkit-gradient(<type>, <point> [, <radius>]?, <point> [, <radius>]? [, <stop>]*) */ 
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#CCC), to(#2F2727)); 
+	/* Safari 5.1+, Chrome 10+ */ 
+	background: -webkit-linear-gradient(#2F2727, #CCC); 
+	/* Opera 11.10+ */ 
+	background: -o-linear-gradient(#2F2727, #CCC);
+	
+}
+
+#EasingBackground{
+	width:3760px;
+	position:absolute;
+}
+#EasingText{
+	width:3760px;
+	position:absolute;
+}
+.slideItem{
+	position:relative;
+	width:938px;
+	height:300px;
+	float:left;
+	
+	text-align:center;
+}
+/*.slideItem img{
+	width:938px;
+	height:300px;
+}*/
+.slideItem img{
+	position:absolute;
+	right: 10px;
+	top:50px;
+}
+.slideItem .sliderText{
+	position:absolute;
+	right: 250px;
+	bottom:40%;
+	background:#FFF;
+	padding: 15px;
+	opacity:.5;
+}
+.column ul{padding:0 15px}
+.column ul li{}
+
+.details img{
+	float: left;
+    margin: 0 10px 0 0;
+    width: 120px;	
+}

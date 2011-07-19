@@ -1,0 +1,42 @@
+<% content_for :pageTitle do %>Database.Com | Pricing<% end %>
+<% content_for :customJs do %>
+	$(document).ready(function () {
+		// Active Tab Styling
+		$($(".menu_nav ul li")[1]).addClass('active');
+	});
+<% end %>
+<!-- Body -->
+<div class="row">
+	<div class='details column grid_12'>
+		<h2>Getting started with Database.com is free</h2> 
+	</div>
+</div>	
+<div class="row">
+	<div class='details column grid_4'> 
+		<h3>Free to Get Started</h3>
+		<ul>
+			<li>100,000 records</li>
+			<li>50,000 transactions per month*</li>
+			<li>3 enterprise users</li>
+		</ul>
+	</div>
+	
+	<div class='details column grid_4'> 
+		<h3>Enterprise Services</h3>
+		<span>$10 / user / month</span>
+		<ul>
+			<li>Identity</li>
+			<li>Authentication</li>
+			<li>Row-level Security</li>
+		</ul>
+	</div>
+	
+	<div class='details column grid_4'> 
+		<h3>Additional Capacity</h3>
+		<ul>
+			<li>$10 / month / additional 100,000 records</li>
+			<li>$10 / month / additional 150,000 transactions</li>
+			<li>$10 / month / 100 light users (authentication only)</li>
+		</ul>
+	</div>
+</div>

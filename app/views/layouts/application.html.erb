@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title><%= yield(:pageTitle) %></title>
+		<!-- Style Definition -->
+		<%= stylesheet_link_tag("common") %>
+		<%= stylesheet_link_tag("grid") %>
+		<%= stylesheet_link_tag("template/style") %>
+		<style>
+			<%= yield(:customCss) %>
+		</style>
+		<!-- Cuffon-->
+		<%= javascript_include_tag("cuffon") %>
+		<%= javascript_include_tag("VAG_Round_400.font") %>
+		<script type="text/javascript">
+			Cufon.replace('h1, h2, h3, h4, h5, h6', {fontFamily:'VAG Round', hover: true});
+		</script>
+		<!-- Script Definition -->
+		<%= javascript_include_tag("jquery-1.6.2.min") %>
+		<%= javascript_include_tag("jquery.easing") %>
+		<%= yield(:customLibs) %>
+		<script>
+			<%= yield(:customJs) %>
+		</script>
+		<!-- Meta Tags -->
+		<%= csrf_meta_tag %>
+	</head>
+	
+	<body>
+		<div class="main">
+
+			<div class="header">
+				<div class="header_resize">
+					<div class="logo">
+						<h1><a href="/"><span>Database</span>.Com <small>Trusted for enterprises. Build for Cloud</small></a></h1>
+					</div>
+					<div class="menu_nav">
+						<ul>
+							<li><a href="/what">What is Database.com</a></li>
+							<li><a href="/pricing/">Pricing</a></li>
+							<li><a href="http://blog.database.com">Blog</a></li>
+							<li><a href="http://wiki.database.com/page/Home">Resources & FAQ</a></li>
+						</ul>
+					</div>
+					<div class="clr"></div>
+				</div>
+			</div>
+
+			<div class="content">
+				<br />
+				<%= yield %>
+				<br />
+				<div class="clr"></div>	
+			</div>
+			
+			<div class="footer">
+				<div class="footer_resize">
+					<div class="clr"></div>
+				</div>
+			</div>
+			</div>
+		</body>	
+</html>

@@ -1,0 +1,50 @@
+<% content_for :pageTitle do %>Database.Com | Pricing<% end %>
+<% content_for :customJs do %>
+	$(document).ready(function () {
+		// Active Tab Styling
+		$($(".menu_nav ul li")[0]).addClass('active');
+	});
+<% end %>
+<!-- Body -->
+<div class="row">
+	<div class='details column grid_12'>
+		<h2>Say hello to Database.com</h2> 
+		<h3>Please leave hardware and software at the door</h3>
+	</div>
+</div>
+<div class="row">
+	<div class='details column grid_9'>
+		<h2>What&apos;s under the covers?</h2>		
+		<p>Sure, you can build tables, fields and relationships with Database.com, but it&apos;s much more than that. It includes a social data model, file storage, user management, authentication and development tools that make it easy to build killer apps.
+		<p>When you&apos;re ready to put it into production it is automatically elastic. It&apos;s massively scalable. It&apos;s automatically backed up. Upgrades are taken care of for you. What&apos;s not to love about that?</p>
+	</div>
+	
+	<div class='details column grid_3'>
+		<%=  link_to  image_tag("dbdc/img_info_g1.jpg") %>
+		<a href="javascript:;">Click to Enlarge</a>
+	</div>
+</div>
+<div class="row">	
+	<div class='details column grid_9'>
+		<h2>What can I use it for?</h2>		
+		<p>Build your apps in any language, like Java, C#, Ruby or PHP. Run them on any platform, like Force.com, VMforce, Amazon EC2 or Google AppEngine. Or run them on any device, like the iPhone, the iPad, Android or Blackberry. They can all securely access Database.com through standards based APIs, like REST, SOAP, OAuth and SAML.
+	</div>
+	
+	<div class='details column grid_3'>
+		<%= link_to image_tag("dbdc/img_info_g2.jpg") %>
+		<a href="javascript:;">Click to Enlarge</a>
+	</div>
+</div>
+<div class="row">	
+	<div class='details column grid_9'>
+		<h2>Built for mobile and social apps</h2>		
+		<p>Database.com makes it easy to build next generation business app. It comes with toolkits for connecting apps that run natively on mobile platforms. It also includes a social data model that makes it easy to build apps with profiles, status updates, news feeds and groups.
+	</div>
+	
+	<div class='details column grid_3'>
+		<%= link_to image_tag("dbdc/img_screen_FPO.jpg") %>
+		<a href="javascript:;">Click to Enlarge</a>
+	</div>
+</div>
+	
+</div>	

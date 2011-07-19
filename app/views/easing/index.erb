@@ -1,0 +1,124 @@
+<% content_for :pageTitle do %>Easing Slider<% end %>
+
+<% content_for :customJs do %>
+	var SLIDER_WIDTH = 938;
+	var isSliding = false;
+	
+	
+	
+	function doSlide(leftPos,duration,backease,textease){
+		
+		if(typeof backease == 'undefined')
+			backease = "easeInQuart";
+			
+		if(typeof textease == 'undefined')
+			backease = "linear";
+		
+		sliderBackground.animate(
+			{"left": leftPos}, 
+			{
+				"duration": duration,
+				"easing": backease
+			}
+		);
+		sliderText.animate(
+			{"left": leftPos}, 
+			{
+				"duration": duration,
+				"easing": textease,
+				"complete":function(){
+					isSliding = false;
+				}
+			}
+		);
+		
+	}
+	
+	$(document).ready( function(){	
+		// Background Part of Slider
+		sliderBackground = $('#EasingBackground');
+		// Text Part pf Slider
+		sliderText = $('#EasingText');
+		
+		$('#SliderWrapper').click(function(){
+			
+			if(!isSliding){
+				
+				isSliding = true;
+				
+				if( sliderBackground.position().left - SLIDER_WIDTH > SLIDER_WIDTH*-4 ){
+					doSlide('-='+SLIDER_WIDTH+'px',1500);
+				}else{
+					doSlide('0',2000);
+				}
+				
+			}
+		});
+	
+	});
+	
+	function slideBack(){
+		if(!isSliding){
+				
+				isSliding = true;
+				
+				if( sliderBackground.position().left + SLIDER_WIDTH < SLIDER_WIDTH*4 ){
+					doSlide('+='+SLIDER_WIDTH+'px',1500,'linear','easeInOutElastic');
+				}else{
+					doSlide('0',4000);
+				}
+				
+			}
+	}
+<% end %>
+
+<div id="bodyWrapper" class="row">
+	<!-- Info Containers / 2 Sections -->
+	<div class="row">
+		<div class="column grid_12">
+			<h1>The Slider</h1>
+			
+			<div id="SliderWrapper">
+				<div id="EasingBackground">
+					<div class="slideItem">
+						<%= image_tag("slider/1.png") %>
+					</div>
+					<div class="slideItem">
+						<%= image_tag("slider/2.png") %>
+					</div>
+					<div class="slideItem">
+						<%= image_tag("slider/3.png") %>
+					</div>
+					<div class="slideItem">
+						<%= image_tag("slider/4.png") %>
+					</div>
+				</div>
+				
+				<div id="EasingText" class="cuffonTitle">
+					<div class="slideItem">
+						<span class="sliderText">
+							Lorem Ipsum Dolor Sit Amet
+						</span>
+					</div>
+					<div class="slideItem">
+						<span class="sliderText">
+							Lorem Ipsum Dolor Sit Amet
+						</span>
+					</div>
+					<div class="slideItem">
+						<span class="sliderText">
+							Lorem Ipsum Dolor Sit Amet
+						</span>
+					</div>
+					<div class="slideItem">
+						<span class="sliderText">
+							Lorem Ipsum Dolor Sit Amet
+						</span>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+</div>
+
