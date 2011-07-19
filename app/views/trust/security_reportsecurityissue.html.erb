@@ -1,0 +1,80 @@
+<% content_for :pagetitle do %>
+	<%=t :trust_security_pagetitle %>
+<% end %>
+
+<% content_for :pageCss do %>
+	<%= stylesheet_link_tag "trust/reportissue" %>
+<% end %>
+
+<% content_for :pageJs do %>
+	<%= javascript_include_tag "jquery-1.6.2.min.js" %>
+	<%= javascript_include_tag "jquery.validate.min.js" %>
+<% end %>
+
+<div id="left"><img style="margin: 48px 0;" src="/images/trust/quote1_data_privacy_parker.gif"/></div>
+
+<div class="white-bg">
+<div id="center" style="width:784px">
+<div id="content-text">
+	<h1><%=t :trust_security_reportissue_formtitle %></h1>
+
+	<form id="reg_form" name="reg_form" action="https://www.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8" method="POST" OnSubmit="return chkRegFm();">
+	<div>
+		<div class="tilesection"><%=t :trust_security_reportissue_incidentinfo %></div>
+
+		<p style="width:540px"><%= (t :trust_security_reportissue_contactus, :mail => link_to("security@salesforce.com","mailto:security@salesforce.com") ).html_safe %></p>
+		<p><%=t :trust_security_reportissue_describeincident %></p>
+
+		<div><label for="subject"><%=t :trust_security_reportissue_subject %></label><input id="subject" name="subject" type="text" maxlength="80"/></div>
+		<div><label for="description"><%=t :trust_security_reportissue_description %></label><textarea id="description" name="description"></textarea></div>
+
+		<div class="tilesection"><%=t :trust_security_reportissue_contactinfo %></div>
+		<div><label for="name"><%=t :trust_security_reportissue_contactname %></label><input id="name" name="name" type="text" maxlength="80"/></div>
+		<div><label for="email"><%=t :trust_security_reportissue_email %><span class="red">*</span></label><input id="email" name="email" type="text" maxlength="80"/></div>
+		<div><label for="phone"><%=t :trust_security_reportissue_phone %><span class="red">*</span></label><input id="phone" name="phone" type="text" maxlength="40"/></div>
+
+		<div><input type="submit" value="<%=t :trust_security_reportissue_submit %>" alt="<%=t :trust_security_reportissue_submit %>"/></div>
+	</div>
+	</form>
+</div>
+
+<script type="text/javascript">
+
+function isValidPhone(phone, element, mindigits) {
+	if (!phone) return false;
+	var digits = 0;
+	for (i=0; i<phone.length; i++) {
+		var c = phone.charAt(i);
+		if (c >= '0' && c <= '9' )
+			digits++;
+		else if ("( -)".indexOf(c) == -1)
+			return false;
+	};
+	return digits >= mindigits;
+}
+
+$(document).ready(function() {
+
+	jQuery.validator.addMethod("phone", isValidPhone);
+
+	$("#reg_form").validate({
+		rules: {
+			subject: "required",
+			description: "required",
+			name: "required",
+			email: { required: true, email: true },
+			phone: { required: true, phone: 10 }
+		},
+		messages: {
+			subject: "<%=t :trust_security_reportissue_entervalidsubject %>",
+			description: "<%=t :trust_security_reportissue_entervaliddescription %>",
+			name: "<%=t :trust_security_reportissue_entervalidname %>",
+			email: "<%=t :trust_security_reportissue_entervalidemail %>",
+			phone: "<%=t :trust_security_reportissue_entervalidphone %>"
+		}
+	});
+});
+
+</script>
+
+</div>

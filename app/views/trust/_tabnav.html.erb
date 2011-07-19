@@ -1,0 +1,16 @@
+
+<ul class="tabnav">
+	<%
+		action = params[:action]
+		homeclass     = action == "home"     ? "on" : "off"
+		securityclass = action == "security" ? "on" : "off"
+		privacyclass  = action == "privacy"  ? "on" : "off"
+		statusclass   = action == "status"   ? "on" : "off"
+	%>
+	</span></a></li>
+	<li><a class="<%= homeclass %>" href="/home"><span><%=t :trust_NavHome %></span></a></li>
+	<li><a class="<%= securityclass %>" href="/security"><span><%=t :trust_NavSecurity %></span></a></li>
+	<li><a class="<%= privacyclass %>" href="/privacy"><span><%=t :trust_NavPrivacy %></span></a></li>
+	<li><a class="<%= statusclass %>" href="/status"><span><%=t :trust_NavStatus %></span></a></li>
+	<li><a class="login" href="https://login.database.com"> <span><%=t :trust_NavLogin %></span></a></li>
+</ul>

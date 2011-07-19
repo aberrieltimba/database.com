@@ -1,0 +1,45 @@
+body {
+	margin: 0px;
+	background: #E3E3E3;
+	width: 100%;
+	font: normal 11px Verdana, Arial, sans-serif;
+	color: black;
+}
+
+div#centerwrap {
+	width: 980px;
+	margin: 0 auto;
+	border-left: 1px solid #BEB9B7;
+	border-right: 1px solid #BEB9B7;
+	background-color: #EEE;
+}
+
+div#header {
+	height: 101px;
+	border-right: 1px solid #E3E3E3;
+	background: url('/images/trust/header-background.gif') no-repeat #E3E3E3;
+}
+div#header-top { height: 76px; }
+		
+div#logo { float: left; padding: 10px 0 0 20px; }
+div#logo-small {float: right; padding: 32px 3px 0 0; }
+img { border: none; }
+
+div#container { background-color: #EEE; }
+div#content-container { background-color: white; }
+
+div#footer { margin: -1px; clear: both;}
+div#footer-links {
+	background-color: #99908C;
+	color: white;
+	font-size: 0.9em;
+	font-weight: bold;
+	padding: 4px 0px 5px 0px;
+	text-align: center;
+}
+div#footer-links a { color: white; text-decoration: none; }		
+div#footer-links a:hover { color: #F10; }
+
+div#left { float: left; width: 196px; margin: 0; }
+div#right { background-color: white; float: right; width: 196px; margin: 15px 0 }
+div#center { background-color: white; float: left; width: 588px; margin: 0; }		

@@ -1,0 +1,56 @@
+div#content-text {
+	 margin: 26px 20px;
+}
+
+div#content-text h1, p, ul, li {
+	 margin: 0;
+	 padding: 0;
+}
+
+div#content-text h1 {
+	 font-size: 18px;
+	 color: #F10;
+	 margin-bottom: 10px;
+}
+
+div#content-text h2 {
+	 font-size: 14px;
+	 margin: 13px 0 4px;
+}
+
+div#content-text h3 {
+	 font-size: 11px;
+	 margin-bottom: 7px;
+}
+
+div#content-text p {
+	 margin-bottom: 7px;
+}
+
+div#content-text ul {
+	 margin-left: 25px }
+
+div#content-text ul li {
+	 padding: 5px 0 5px 15px;
+	 background: url('/images/trust/bullet_4sq.gif') no-repeat;
+	 list-style: none;
+}
+
+div#content-text ul li.link {
+	 margin: 8px 0;
+	 padding: 0 0 5px 20px;
+	 background: url('/images/trust/but_circle15_off.gif') no-repeat;
+}
+
+div#content-text ul li li {
+	 background: none;
+}
+
+div#content-text a {
+	 color: #015BA7;
+	 text-decoration: none;
+}
+
+div#content-text a:hover {
+	 color: #FF1100;
+}

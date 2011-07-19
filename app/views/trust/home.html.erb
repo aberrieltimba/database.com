@@ -1,0 +1,50 @@
+<% content_for :pagetitle do %>
+	<%=t :trust_home_pagetitle %>
+<% end %>
+
+<div id="left">
+	<img style="margin: 48px 0;" src="/images/trust/quote1_data_privacy_parker.gif"/>
+</div>
+
+<div class="white-bg">
+<div id="center">
+	<div id="content-text">
+		<h1><%=t :trust_home_H1 %></h1>
+		<p><%=t :trust_home_P1 %></p>
+		<p><%=t :trust_home_P2 %></p>
+		<ul>
+			<li><%=t :trust_home_Li1 %></li>
+			<li><%=t :trust_home_Li2 %></li>
+			<li><%=t :trust_home_Li3 %></li>
+			<li><%=t :trust_home_Li4 %></li>
+			<li><%=t :trust_home_Li5 %></li>
+		</ul>
+		<br/>
+		<p>
+			<%= (t :trust_home_P3, :ideas => link_to("ideas.salesforce.com", "http://ideas.salesforce.com")).html_safe %>
+		</p>
+	</div>
+</div>
+
+<div id="right">
+
+	<div class="related">
+		<div class="related-top"></div>
+		<h4>
+			<img src="/images/trust/trust_exclamation.gif"/>
+			<%=t :trust_home_RelTitle %>
+		</h4>
+		<a href="#">
+			<%=t :trust_home_RelText %>
+		</a>
+		<div class="related-bottom"></div>
+	</div>
+
+	<div class="ctacontainer ctacontainer-large">
+		<a href="/trust/status">
+			<img src="/images/trust/cta_systemstatus.gif"/>
+		</a>
+	</div>
+
+</div>
+</div>
