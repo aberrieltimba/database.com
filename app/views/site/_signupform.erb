@@ -1,5 +1,5 @@
 <div id="registerform" class="grid_8" style="display:none;" >
-<% form_tag("#", :id => "reg_form") do %>
+<%= form_tag("#", :id => "reg_form") do %>
 	<%= field_set_tag "About you" do %>
 		<p><%= label_tag :firstname, raw("First Name:" + req) %><%= text_field_tag :firstname %></p>
 		<p><%= label_tag :lastname, raw("Last Name:" + req) %><%= text_field_tag :lastname %></p>
