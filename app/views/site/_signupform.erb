@@ -1,0 +1,66 @@
+<div id="registerform" class="grid_8" style="display:none;" >
+<% form_tag("#", :id => "reg_form") do %>
+	<%= field_set_tag "About you" do %>
+		<p><%= label_tag :firstname, raw("First Name:" + req) %><%= text_field_tag :firstname %></p>
+		<p><%= label_tag :lastname, raw("Last Name:" + req) %><%= text_field_tag :lastname %></p>
+		<p><%= label_tag :email, raw("Email Address:" + req) %><%= text_field_tag :email %></p>
+		<p><%= label_tag :jobrole, raw("Primary Job Role:" + req) %><%= select_tag :jobrole, options_for_select([ ["Choose one...",""],["Database Administrator","Database Administrator"],["Developer","Developer"],["Architect/CTO","Architect/CTO"],["Administrator","Administrator"],["IT Manager/Executive","IT Manager/Executive"],["Business Manager/Executive","Business Manager/Executive"] ])  %></p>
+	<% end %>
+
+	<%= field_set_tag "About Your Company" do %>
+		<p><%= label_tag :country, raw("Country:" + req) %><%= select_tag :country, options_for_select([ ["Choose one...",""],["United States","US"],["Afghanistan","AF"],["Albania","AL"],["Algeria","DZ"],["American Samoa","AS"],["Andorra","AD"],["Anguilla","AI"],["Antarctica","AQ"],["Antigua And Barbuda","AG"],["Argentina","AR"],["Armenia","AM"],["Aruba","AW"],["Australia","AU"],["Austria","AT"],["Ayerbaijan","AZ"],["Bahamas, The","BS"],["Bahrain","BH"],["Bangladesh","BD"],["Barbados","BB"],["Belarus","BY"],["Belize","BZ"],["Belgium","BE"],["Benin","BJ"],["Bermuda","BM"],["Bhutan","BT"],["Bolivia","BO"],["Bouvet Is","BV"],["Bosnia and Herzegovina","BA"],["Botswana","BW"],["Brazil","BR"],["British Indian Ocean Territory","IO"],["Brunei","BN"],["Bulgaria","BG"],["Burkina Faso","BF"],["Burundi","BI"],["Cambodia","KH"],["Cameroon","CM"],["Canada","CA"],["Cape Verde","CV"],["Cayman Is","KY"],["Central African Republic","CF"],["Chad","TD"],["Chile","CL"],["China","CN"],["China (Hong Kong S.A.R.)","HK"],["China (Macau S.A.R.)","MO"],["Christmas Is","CX"],["Cocos (Keeling) Is","CC"],["Colombia","CO"],["Comoros","KM"],["Cook Islands","CK"],["Costa Rica","CR"],["Cote D'Ivoire (Ivory Coast)","CI"],["Croatia (Hrvatska)","HR"],["Cyprus","CY"],["Czech Republic","CZ"],["Democratic Republic of the Congo","CD"],["Denmark","DK"],["Dominica","DM"],["Dominican Republic","DO"],["Djibouti","DJ"],["East Timor","TP"],["Ecuador","EC"],["Egypt","EG"],["El Salvador","SV"],["Equatorial Guinea","GQ"],["Eritrea","ER"],["Estonia","EE"],["Ethiopia","ET"],["Falkland Is (Is Malvinas)","FK"],["Faroe Islands","FO"],["Fiji Islands","FJ"],["Finland","FI"],["France","FR"],["French Guiana","GF"],["French Polynesia","PF"],["French Southern Territories","TF"],["F.Y.R.O. Macedonia","MK"],["Gabon","GA"],["Gambia, The","GM"],["Georgia","GE"],["Germany","DE"],["Ghana","GH"],["Gibraltar","GI"],["Greece","GR"],["Greenland","GL"],["Grenada","GD"],["Guadeloupe","GP"],["Guam","GU"],["Guatemala","GT"],["Guinea","GN"],["Guinea-Bissau","GW"],["Guyana","GY"],["Haiti","HT"],["Heard and McDonald Is","HM"],["Honduras","HN"],["Hungary","HU"],["Iceland","IS"],["India","IN"],["Indonesia","ID"],["Ireland","IE"],["Israel","IL"],["Italy","IT"],["Jamaica","JM"],["Japan","JP"],["Jordan","JO"],["Kayakhstan","KZ"],["Kenya","KE"],["Kiribati","KI"],["Korea, South","KR"],["Kuwait","KW"],["Kyrgyzstan","KG"],["Laos","LA"],["Latvia","LV"],["Lebanon","LB"],["Lesotho","LS"],["Liberia","LR"],["Liechtenstein","LI"],["Lithuania","LT"],["Luxembourg","LU"],["Madagascar","MG"],["Malawi","MW"],["Malaysia","MY"],["Maldives","MV"],["Mali","ML"],["Malta","MT"],["Marshall Is","MH"],["Mauritania","MR"],["Mauritius","MU"],["Martinique","MQ"],["Mayotte","YT"],["Mexico","MX"],["Micronesia","FM"],["Moldova","MD"],["Monaco","MC"],["Mongolia","MN"],["Montserrat","MS"],["Morocco","MA"],["Mozambique","MZ"],["Myanmar","MM"],["Namibia","NA"],["Nauru","NR"],["Nepal","NP"],["Netherlands, The","NL"],["Netherlands Antilles","AN"],["New Caledonia","NC"],["New Zealand","NZ"],["Nicaragua","NI"],["Niger","NE"],["Nigeria","NG"],["Niue","NU"],["Norway","NO"],["Norfolk Island","NF"],["Northern Mariana Is","MP"],["Oman","OM"],["Pakistan","PK"],["Palau","PW"],["Panama","PA"],["Papua new Guinea","PG"],["Paraguay","PY"],["Peru","PE"],["Philippines","PH"],["Pitcairn Island","PN"],["Poland","PL"],["Portugal","PT"],["Puerto Rico","PR"],["Qatar","QA"],["Republic of the Congo","CG"],["Reunion","RE"],["Romania","RO"],["Russia","RU"],["Saint Helena","SH"],["Saint Kitts And Nevis","KN"],["Saint Lucia","LC"],["Saint Pierre and Miquelon","PM"],["Saint Vincent And The Grenadines","VC"],["Samoa","WS"],["San Marino","WM"],["Sao Tome and Principe","ST"],["Saudi Arabia","SA"],["Senegal","SN"],["Seychelles","SC"],["Sierra Leone","SL"],["Singapore","SG"],["Slovakia","SK"],["Slovenia","SI"],["Solomon Islands","SB"],["Somalia","SO"],["South Africa","ZA"],["South Georgia &amp; The S. Sandwich Is","GS"],["Spain","ES"],["Sri Lanka","LK"],["Suriname","SR"],["Svalbard And Jan Mayen Is","SJ"],["Swaziland","SZ"],["Sweden","SE"],["Switzerland","CH"],["Syria","SY"],["Taiwan","TW"],["Tajikistan","TJ"],["Tanzania","TZ"],["Thailand","TH"],["Timor-Leste","TL"],["Togo","TG"],["Tokelau","TK"],["Tonga","TO"],["Trinidad And Tobago","TT"],["Tunisia","TN"],["Turkey","TR"],["Turks And Caicos Is","TC"],["Turkmenistan","TM"],["Tuvalu","TV"],["Uganda","UG"],["Ukraine","UA"],["United Arab Emirates","AE"],["United Kingdom","GB"],["United States Minor Outlying Is","UM"],["Uruguay","UY"],["Uzbekistan","UZ"],["Vanuatu","VU"],["Vatican City State (Holy See)","VA"],["Venezuela","VE"],["Vietnam","VN"],["Virgin Islands (British)","VG"],["Virgin Islands (US)","VI"],["Wallis And Futuna Islands","WF"],["Western Sahara","EH"],["Yemen","YE"],["Zambia","ZM"],["Zimbabwe","ZW"],["Other","__"]], "US")  %></p>
+		<p><%= label_tag :postalcode, raw("Postal Code:" + req) %><%= text_field_tag :postalcode %></p>
+		<p><%= label_tag :company, raw("Company:" + req) %><%= text_field_tag :company %></p>
+	<% end %>
+
+	<%= field_set_tag "Developer Force Membership" do %>
+		<p>A free Developer Force membership is built into your registration, putting key Force.com technical information and free developer tools at your fingertips.</p>
+		<p><%= label_tag :username, raw("Username:" + req) %><%= text_field_tag :username %></p>
+	<% end %>
+
+	<%= field_set_tag "For your security" do %>
+		<p><%= recaptcha_tags %></p>
+		<p><%= check_box_tag :msa %><%= label_tag :msa, "I have read and agreed to the <a href='http://www.salesforce.com/company/agreements/developer_edition/'>Master Subscription Agreement</a>".html_safe %></p>
+	<% end %>
+
+	<p>
+		<%= submit_tag :submit %>
+		<input type="button" class="simplemodal-close" value="Close"/>
+	</p>
+<% end %>
+</div>
+
+<script type="text/javascript">
+
+$(document).ready(function() {
+
+	$("#reg_form").validate({
+		rules: {
+			firstname: "required",
+			lastname: "required",
+			email: { required: true, email: true },
+			jobrole: "required",
+			country: "required",
+			postalcode: "required",
+			company: "required",
+			username: { required: true, email: true },
+			msa: "required"
+		},
+		messages: {
+			firstname: "Enter a First Name",
+			lastname: "Enter a Last Name",
+			email: "Enter a Valid Email Address",
+			jobrole: "Enter your Primary Job Role",
+			country: "Choose a Country",
+			postalcode: "Enter a Postal Code",
+			company: "Enter an Organization",
+			username: { required: "Enter a Username", email: "Username must be in the form of an email" },
+			msa: "Please read an agree to the Master Subscription Agreement"
+		},
+		errorPlacement: function(error, element) {
+			error.appendTo( element.parent() );
+		}
+	});
+});
+
+</script>

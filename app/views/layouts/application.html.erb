@@ -5,6 +5,7 @@
 		<!-- Style Definition -->
 		<%= stylesheet_link_tag("common") %>
 		<%= stylesheet_link_tag("grid") %>
+		<%= stylesheet_link_tag("signupform") %>
 		<%= stylesheet_link_tag("template/style") %>
 		<style>
 			<%= yield(:customCss) %>
@@ -18,6 +19,8 @@
 		<!-- Script Definition -->
 		<%= javascript_include_tag("jquery-1.6.2.min") %>
 		<%= javascript_include_tag("jquery.easing") %>
+		<%= javascript_include_tag("jquery.simplemodal.1.4.1.min") %>
+		<%= javascript_include_tag("jquery.validate.min") %>
 		<%= yield(:customLibs) %>
 		<script>
 			<%= yield(:customJs) %>
@@ -25,7 +28,7 @@
 		<!-- Meta Tags -->
 		<%= csrf_meta_tag %>
 	</head>
-	
+
 	<body>
 		<div class="main">
 
@@ -40,6 +43,7 @@
 							<li><a href="/pricing/">Pricing</a></li>
 							<li><a href="http://blog.database.com">Blog</a></li>
 							<li><a href="http://wiki.database.com/page/Home">Resources & FAQ</a></li>
+							<li><a id="signup-button" href="#" onclick="$('#registerform').modal();">Sign up</a></li>
 						</ul>
 					</div>
 					<div class="clr"></div>
@@ -50,14 +54,16 @@
 				<br />
 				<%= yield %>
 				<br />
-				<div class="clr"></div>	
+				<div class="clr"></div>
 			</div>
-			
+
 			<div class="footer">
 				<div class="footer_resize">
 					<div class="clr"></div>
 				</div>
 			</div>
-			</div>
-		</body>	
+		</div>
+
+		<%= render "signupform" %>
+	</body>
 </html>
