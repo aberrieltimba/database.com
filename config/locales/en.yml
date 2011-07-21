@@ -4,6 +4,41 @@
 en:
   hello: "Hello world"
 
+  site:
+    signupform:
+      aboutyou: "About you"
+      firstname: "First name:"
+      lastname: "Last name:"
+      email: "Email Address:"
+      jobrole: "Primary Job Role:"
+
+      aboutyourcompany: "About your company"
+      country: "Country:"
+      postalcode: "Postal Code:"
+      company: "Company:"
+
+      devforcemembership: "Developer Force Membership"
+      devforcedescription: "A free Developer Force membership is built into your registration, putting key Force.com technical information and free developer tools at your fingertips."
+      username: "Username:"
+
+      foryoursecurity: "For your security"
+      iagreemsa: "I have read and agreed to the %{msa}"
+      msa: "Master Subscription Agreement"
+
+      #---------------
+      # Error messages
+      #---------------
+      reqfirstname: "Enter a First Name"
+      reqlastname: "Enter a Last Name"
+      reqemail: "Enter a Valid Email Address"
+      reqjobrole: "Enter your Primary Job Role"
+      reqcountry: "Choose a Country"
+      reqpostalcode: "Enter a Postal Code"
+      reqcompany: "Enter an Organization"
+      requsername: "Enter a Username"
+      usernameisemail: "Username must be in the form of an email"
+      reqmsa: "Please read an agree to the Master Subscription Agreement"
+
 #----------------
 # Trust subdomain
 #----------------
