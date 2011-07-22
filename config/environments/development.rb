@@ -22,5 +22,9 @@ DatabaseCom::Application.configure do
 
   # Only use best-standards-support built into browsers
   config.action_dispatch.best_standards_support = :builtin
+
+  # Recaptcha keys
+  ENV['RECAPTCHA_PUBLIC_KEY'] = '6LdmVsYSAAAAAF-GrMtARtSj8h5EjgSgwc9l4QX_'
+  ENV['RECAPTCHA_PRIVATE_KEY'] = '6LdmVsYSAAAAAICCKxWKUNI8RllRcECgmG5VcZb3'
 end
 

@@ -7,12 +7,13 @@
 	border: 3px solid steelblue;
 	padding: 20px;
 }
+#registerform { font-size: 12px; }
 form fieldset { border: none; }
-form legend { color: black; font-weight: bold; }
-form p { margin: 2px 0; padding: 0; }
+form legend { font-weight: bold; }
+form p { margin: 2px 0; padding: 0; color: #878787; }
 form label { display: inline-block; }
 fieldset input,select { margin: 2px 8px; }
 form label:first-child { width: 110px; text-align: right; }
-form label.error { color: red; font-size: 0.9em; } 
+form label.error { color: red; font-size: 0.8em; } 
 form a { color: black; }
 .red{ color: #F10; }
