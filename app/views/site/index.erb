@@ -1,61 +1,153 @@
-<% content_for :pageTitle do %>Database.Com<% end %>
+<% content_for :pageTitle do %> <%= t '.ptitle' %> <% end %>
+<% content_for :customStyleSheets do %> <%= stylesheet_link_tag("slider") %> <% end %>
+<% content_for :customLibs do %> <%= javascript_include_tag("slider") %> <% end %>
 
+<!--Slider -->
 <div class="row">
-	<div class='details column grid_6'> 
-		<h2>The enterprise cloud database from salesforce.com</h2> 
-		<h3>Designed for the next generation of apps</h3>
+	<div class='column grid_12'>
 		
-		<ul> 
-			<li>Cloud: auto elasticity, auto security &amp; auto backups</li> 
-			<li>Open APIs &amp; Authentication: REST, SOAP &amp; OAuth</li> 
-			<li>Social Data Model: profiles, feeds &amp; status updates</li>
-			<li>Secure: Trusted by 87,000+ businesses &amp; governments</li> 
-		</ul> 
+		<div id="SliderWrapper">
+			<div id="EasingBackground">
+				<div class="slideItem">
+					<%= image_tag("slider/mobile.png") %>
+				</div>
+				<div class="slideItem">
+					<%= image_tag("slider/social.png") %>
+				</div>
+				<div class="slideItem">
+					<%= image_tag("slider/trusted.png") %>
+				</div>
+				<div class="slideItem">
+					<%= image_tag("slider/open.png") %>
+				</div>
+			</div>
+			
+			<div id="EasingText" class="cuffonTitle">
+				<div class="slideItem">
+					<span class="sliderText">
+						<h2>Ready, Set, Deploy.</h2>
+						<h3><%= image_tag("template/openico.png") %> Going Mobile has never been this easy.</h3>
+						<span>
+							Access your data from antwhere, on any device.The integrated capabilities of database.com  help you quickly build robust mobile application - and deploy in record time. 
+						</span>	
+					</span>
+				</div>
+				<div class="slideItem">
+					<span class="sliderText">
+						<h2>Ready, Set, Deploy.</h2>
+						<h3><%= image_tag("template/openico.png") %> Going Mobile has never been this easy.</h3>
+						<span>
+							Access your data from antwhere, on any device.The integrated capabilities of database.com  help you quickly build robust mobile application - and deploy in record time. 
+						</span>
+					</span>
+				</div>
+				<div class="slideItem">
+					<span class="sliderText">
+						<h2>You#039;ll sleep better on our cloud.</h2>
+						<h3>450,345,890  transactions performed today</h3>
+						<span>
+							The world&#039;s more trustred and secure database2. More than 97,700 organizations already rely on it every day, including some of the world&#039;s largest banks, government agencies, and healthcare providers.
+						</span>
+					</span>
+				</div>
+				<div class="slideItem">
+					<span class="sliderText">
+						<h2>Ready, Set, Deploy.</h2>
+						<h3><%= image_tag("template/openico.png") %> Going Mobile has never been this easy.</h3>
+						<span>
+							Database.com provides the perfect solution for developing and running large-scale, multi-tiered, scalable, reliable, and secure network applications. 
+						</span>
+					</span>
+				</div>
+			</div>
+			
+		</div>
 		
-		<a href='#top'> 
-			<span class='content'> 
-				<strong>Sign Up For Updates</strong> 
-			</span> 
-		</a> 
-	</div><!-- .details --> 
-	<div class='video column grid_6'> 
-		<object width="454" height="273">
-		<param name="movie" value="http://www.youtube.com/v/LkBpAHxwqQs?fs=1&amp;hl=en_US"></param>
-		<param name="allowFullScreen" value="true"></param>
-		<param name="allowscriptaccess" value="always"></param>
-		<param name="wmode" value="transparent"></param>
-		<embed wmode="opaque" src="http://www.youtube.com/v/LkBpAHxwqQs?fs=1&amp;hl=en_US" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="454" height="273"></embed>
-	</object> 
-	</div><!-- video --> 
+	</div>
 </div>
+<br />
+<!-- News, Signup Bar -->
 <div class="row">
-	<div class='details column grid_6'> 
-		<h2>Database.com Blog</h2> 
-		<h3>Database.com Sneak Peek Webinar Recording Now Available</h3>
-		<span>The Database.com Sneak Peek webinar from June 3, 2011 is now available. Read More</span>
-		<br />
-		<h3>Leaked Photos! Database.com</h3>
-		<%= link_to image_tag("dbdc/leakedphotos.jpg") %>
-		<span>If you haven&apos;t heard, the Database.com Sneak Peek Webinar is this Friday. We&apos;re excited to preview Database.com to the world and hope you&apos;ll be able to attend. To get your attention, here are two screens of some tools that will be part of Database.com. Register Now Read More</span>
-		<br />
-		<h3>Database.com Sneak Peek Webinar</h3>
-		<%= link_to image_tag("dbdc/webinar.png") %>
-		<span>Are you ready for a look at the world&apos;s first enterprise database in the cloud? An open database that&apos;s designed to support social, collaborative, mobile apps? A fully-managed cloud database service with a sophisticated security model that your apps can leverage to get the right data to the right users at the right time? A [...] Read More</span>
-	</div>
-	<div class='details column grid_4'>
-		<h2>Tools and Toolkits</h2>
-		<span>Database.com will have toolkits available for a number of languages and platforms, including:</span>
-			<ul>
-				<li>Java</li>
-				<li>.NET</li>
-				<li>Ruby</li>
-				<li>Android</li>
-				<li>iOS</li>
-			</ul>
-		<h2>FAQ</h2>
-		<p>What is the difference between Force.com and Database.com?</p>
-		<p>Can people port an existing database to Database.com?</p>
-		<p>When will it be available?</p>
+	<div class='column grid_12'>
+		<div id="newsBar">
+		
+			<div class="floatleft">
+				<%= image_tag("template/nb_rcorner.png") %>
+				<span class="margin_0_10">
+					<b>Latest news</b> 
+					&nbsp;&nbsp;|&nbsp;&nbsp;
+					Webinar: Building a database in under 3 minutes
+				</span>	
+			</div>
+			
+			<div class="floatright">
+				<span class="margin_0_10">
+					<b>Free database:</b> 
+					&nbsp;
+					Get up and running minutes
+				</span>	
+				<a href="javascript:;" class="signup">
+					<%= image_tag("template/signupButton.png") %>
+				</a>
+			</div>
+			
+		</div>
 	</div>
 </div>
-
+<br />
+<!--4 Boxes -->
+<div id="boxes" class="row">
+	<!-- Mobile -->
+	<div class='first column grid_3'>
+		<span>
+			<b>Mobile</b>
+			<br />				
+			Custom REST APIs, OAuth, data feeds, access management
+			<br />
+			<a href="javascript:;">Read More</a>
+		</span>
+		<div class="icon">
+			<%= image_tag("template/mobileico.png") %>
+		</div>
+	</div>
+	<!-- Social -->
+	<div class='column grid_3'>
+		<span>
+			<b>Social</b>
+			<br />				
+			Profiles, subscriptions, social graph, status updates, data feeds
+			<br />
+			<a href="javascript:;">Read More</a>
+		</span>
+		<div class="icon">
+			<%= image_tag("template/socialico.png") %>
+		</div>
+	</div>
+	<!-- Trusted -->
+	<div class='column grid_3'>
+		<span>
+			<b>Trusted</b>
+			<br />				
+			Proven, secure, reliable, and highly-available infrastr
+			<br />
+			<a href="javascript:;">Read More</a>
+		</span>
+		<div class="icon">
+			<%= image_tag("template/trustedico.png") %>
+		</div>
+	</div>
+	<!-- Open -->
+	<div class='last column grid_3'>
+		<span>
+			<b>Open</b>
+			<br />				
+			REST, SOAP, bulk and streaming APIs. SAML, OAuth  Read mor
+			<br />
+			<a href="javascript:;">Read More</a>
+		</span>
+		<div class="icon">
+			<%= image_tag("template/openico.png") %>
+		</div>
+	</div>
+</div>
+<br />

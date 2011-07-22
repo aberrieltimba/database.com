@@ -3,67 +3,108 @@
 	<head>
 		<title><%= yield(:pageTitle) %></title>
 		<!-- Style Definition -->
-		<%= stylesheet_link_tag("common") %>
 		<%= stylesheet_link_tag("grid") %>
-		<%= stylesheet_link_tag("signupform") %>
-		<%= stylesheet_link_tag("template/style") %>
+		<%= stylesheet_link_tag("layout") %>
+		<%= yield(:customStyleSheets) %>
 		<style>
 			<%= yield(:customCss) %>
 		</style>
 		<!-- Cuffon-->
 		<%= javascript_include_tag("cuffon") %>
-		<%= javascript_include_tag("VAG_Round_400.font") %>
+		<%= javascript_include_tag("helveticaLike_400.font") %>
 		<script type="text/javascript">
-			Cufon.replace('h1, h2, h3, h4, h5, h6', {fontFamily:'VAG Round', hover: true});
+			//Cufon.replace('#dbdcHeader', {fontFamily:'Droid Sans', hover: true});
+			Cufon.replace('.helveticaLike', {fontFamily:'helveticaLike', hover: true});
+			
 		</script>
 		<!-- Script Definition -->
 		<%= javascript_include_tag("jquery-1.6.2.min") %>
 		<%= javascript_include_tag("jquery.easing") %>
-		<%= javascript_include_tag("jquery.simplemodal.1.4.1.min") %>
-		<%= javascript_include_tag("jquery.validate.min") %>
 		<%= yield(:customLibs) %>
+		<script>
+			$(document).ready(function(){
+				$('#boxes div').hover(
+					function(){
+					$(this).addClass('hover');
+					},
+					function(){
+					$(this).removeClass('hover');
+					});			
+			});
+		</script>
 		<script>
 			<%= yield(:customJs) %>
 		</script>
 		<!-- Meta Tags -->
 		<%= csrf_meta_tag %>
 	</head>
-
+	
 	<body>
-		<div class="main">
-
-			<div class="header">
-				<div class="header_resize">
-					<div class="logo">
-						<h1><a href="/"><span>Database</span>.Com <small>Trusted for enterprises. Build for Cloud</small></a></h1>
+		<div id="dbdcHeader">
+			<div class="row">
+				<div class='column grid_5'>
+					<div id="dbdcLogo">
+						<%= image_tag("template/headercloud.png") %>
+						<span class="text">
+							<span class="product helveticaLike">database.com</span>
+							<br />
+							<span class="slogan helveticaLike">The world&#39;s most trusted cloud.</span>
+						</span>
 					</div>
-					<div class="menu_nav">
-						<ul>
-							<li><a href="/what">What is Database.com</a></li>
-							<li><a href="/pricing/">Pricing</a></li>
-							<li><a href="http://blog.database.com">Blog</a></li>
-							<li><a href="http://wiki.database.com/page/Home">Resources & FAQ</a></li>
-							<li><a id="signup-button" href="#" onclick="$('#registerform').modal();">Sign up</a></li>
-						</ul>
-					</div>
-					<div class="clr"></div>
 				</div>
-			</div>
+				<div class='navMenu column grid_7'>
+					
+					<span id="authbox" class="floatright margin_0_5 cascade">
+						<a href="Javascript:;">Login </a>
+						| 
+						<a href="Javascript:;">Signup</a>
+					</span>
+					
+					<span class="floatright margin_0_5 cascade">
+						<a href="Javascript:;">How it Works</a>
+						<a href="Javascript:;">Pricing</a>
+						<a href="Javascript:;">Blog</a>
+						<a href="Javascript:;">Resources</a>
+						<a href="Javascript:;">Support</a>
+					</span>
+					
 
-			<div class="content">
-				<br />
-				<%= yield %>
-				<br />
-				<div class="clr"></div>
-			</div>
-
-			<div class="footer">
-				<div class="footer_resize">
-					<div class="clr"></div>
 				</div>
-			</div>
+				<div  class='column grid_2'>
+					
+				</div>
+			</div>	
 		</div>
-
-		<%= render "signupform" %>
-	</body>
+		<br />
+		<%= yield %>
+		<br />
+		<!-- Page Footer -->
+		<div id="dbdcFooter">
+			<div class="row">
+				<div class='column grid_7'>
+					&copy; Copyright 2000-2011 salesforce.com, inc. All rights reserved.
+				</div>
+				<div class='column grid_5'>
+						
+						<span class="floatright margin_0_5 cascade">
+							<%= link_to image_tag("template/social_fb.png") %>
+							<%= link_to image_tag("template/social_twitter.png") %>
+							<%= link_to image_tag("template/social_rss.png") %>
+						</span>
+						
+						<span class="floatright  margin_0_5">
+							<a href="Javascript:;">Site map</a>
+							|
+							<a href="Javascript:;">Blog</a>
+							|
+							<a href="Javascript:;">Contact</a>
+							|
+							<a href="Javascript:;">Support</a>
+						</span>
+						
+				</div>
+			</div>	
+		</div>
+		
+	</body>	
 </html>
