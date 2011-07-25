@@ -2,8 +2,6 @@ en:
  common:
   sitelabel:"Database.com"
  site:
-  howitworks:
-   ptitle: "How it works"
   index:
    ptitle: "Home"
 

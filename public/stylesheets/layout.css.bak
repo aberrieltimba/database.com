@@ -23,8 +23,6 @@ a:link img{
 
 #dbdcLogo{
 	margin: 20px 5px;
-	display:block;
-	text-decoration:none;
 }
 #dbdcLogo img{
 	float:left;
@@ -104,18 +102,6 @@ ul.hmenu li{
 .margin_0_10{
 	margin:0 10px;
 }
-.padding_0_5{padding:0 5px;}
-.padding_0_10{padding:0 10px;}
-.padding_0_20{padding:0 20px;}
-.padding_0_0_0_10{padding:0 0 0 10px;}
-.margin_0_0_0_10{margin:0 0 0 10px;}
-.margin_0_0_0_20{margin:0 0 0 20px;}
-
-.relative{position:relative}
-.contentBox{
-	border:1px solid #CCC;
-	background:#fff;
-}
 #newsBar{
 	height:38px;
 	background:#FFF url(../images/template/nb_back.png) repeat-x;
@@ -174,10 +160,7 @@ a.signup{
 #boxes>div.hover{
 	background: url(../images/template/boxes_hover.png) ;
 }
-#boxes span {
-    display: block;
-    width: 140px;
-}
+#boxes span{padding: 0 50px 0 0;}
 #boxes .icon{
 	bottom: 20px;
     position: absolute;

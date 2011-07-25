@@ -5,6 +5,4 @@ class SiteController < ApplicationController
 	end
 	def what
 	end
-	def howitworks
-	end
 end

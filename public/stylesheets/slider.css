@@ -1,5 +1,15 @@
+#EasingIndex{position:absolute; right:0;}
+#EasingIndex ul li{
+	margin: 0 5px;
+	width:10px;
+	height:10px;
+	background: url(../images/slider/dot.png) no-repeat;
+}
+#EasingIndex ul li.active{
+	background: url(../images/slider/dotactive.png) no-repeat;
+}
 #SliderWrapper{
-	height:420px;
+	height:450px;
 	position:relative;	
 }
 #EasingBackground{
@@ -24,16 +34,19 @@
 	position:absolute;
 	right: 10px;
 	top:50px;
+	vertical-align: text-bottom;
 }
 .sliderText{
 	position:absolute;
 	top:20px;
 	left:20px;
+	width: 400px;
 }
-.sliderText h2{font-size:7.2em;color:#7ad4f9;}
-.sliderText h3{font-size:1.4em;color:#000;}
-.sliderText span{font-size:1.2em;color:#878787;}
+.sliderText h2{font-size:5.8em;color:#7ad4f9;margin-bottom:10px;}
+.sliderText h3{font-size:2em;color:#000;}
+.sliderText span{font-size:1.6em;color:#878787;font-family:georgia;}
 .sliderText img{position:static;}
+.sliderText a{color:#7ad4f9;text-decoration:none;}
 
 .column ul{padding:0 15px}
 .column ul li{}
@@ -43,3 +56,4 @@
     margin: 0 10px 0 0;
     width: 120px;	
 }
+.fadeMask{}

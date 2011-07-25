@@ -1,0 +1,74 @@
+ul#graphtabs {
+    margin: 10px 0;
+}
+ul#graphtabs li{
+	margin:0 15px;
+}
+ul#graphtabs a{
+	text-decoration: none;
+	color:#878787;
+	font-size: 1.4em;
+}
+ul#graphtabs a.active{
+	color: #000000;
+}
+#graphicWrapper{
+	background: url(../images/howitworks/graphback.png) center center no-repeat;
+}
+ul#graphic{
+	margin: 50px auto;
+	padding:0 0 5px;
+	list-style:none;
+	color:#a5a5a5;
+	font-size:1.4em;
+	font-weight:bold;
+	width:333px;
+}
+ul#graphic li{
+	width:255px;
+	height:31px;
+	padding:15px 20px;
+	margin: 0 39px;
+	background:url(../images/howitworks/grayblock.png) no-repeat;
+}
+ul#graphic li.hover{
+	background:url(../images/howitworks/hoverblock.png) no-repeat;
+	color:#fff
+}
+ul#graphic li.active{
+	width:333px;
+	height:36px;
+	margin: 0 0 -5px;
+	background:url(../images/howitworks/blueblock.png) no-repeat;
+	color:#fff
+}
+#hiw_wrapper{
+	
+}
+#hiw_textcontent{
+	margin: 0 20px;
+}
+#hiw_textcontent .title{
+	padding: 0 20px;
+	font-size:1.8em;
+	margin-bottom: 5px;
+}
+#hiw_textcontent .content{
+	margin: 0;
+	padding: 0 20px;
+	font-size:1.4em;
+	color:#878787;
+}
+#hiw_textcontent .related{
+	background: #e5f2f7;
+	font-size: 1.4em;
+    padding: 15px 20px;
+	line-height:1.6em;
+}
+#hiw_textcontent .related b{
+}
+#hiw_textcontent .related a{
+	display:block;
+	color:#000;
+	text-decoration:none;
+}

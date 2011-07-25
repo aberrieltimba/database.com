@@ -55,10 +55,10 @@ DatabaseCom::Application.routes.draw do
 	# This is a legacy wild controller route that's not recommended for RESTful applications.
 	# Note: This route will make all actions in every controller accessible via GET requests.
 	# match ':controller(/:action(/:id(.:format)))'
-	root :to => "site#index" 
-	match ':locale' => 'site#index'
+	root :to => "site#index"	
+	match '/:locale' => 'site#index'
 	scope "(:locale)", :locale => /en|es/ do
-		match ":action" => "site#:action"
+		match "/:action" => "site#:action"
 	end
 
 end

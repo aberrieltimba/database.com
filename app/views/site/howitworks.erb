@@ -1,0 +1,82 @@
+<% content_for :pageTitle do %>Database.Com | How it Works<% end %>
+
+<% content_for :customStyleSheets do %> <%= stylesheet_link_tag("howitworks") %> <% end %>
+<% content_for :customLibs do %>
+	<%= javascript_include_tag("jquery.corner") %>
+<% end %>
+<% content_for :customJs do %>
+	
+	function doHighlight(tabName){
+		$('.tabSelected').removeClass('tabSelected')
+		$('.'+tabName).addClass('active tabSelected');
+	}
+	
+	$(document).ready(function(){
+		$('.roundCorners').corner('5px');
+		
+		$('#graphic li:not(".tabSelected")').live('mouseover mouseout',function(event){
+			if(event.type == 'mouseover'){	
+				$(this).addClass('hover');
+			}else{
+				$(this).removeClass('hover');
+			}
+		});
+		$('#graphic li').live('click',function(){
+			$('#graphic li.tabSelected').removeClass('active hover tabSelected');
+			$('#graphtabs a.active').removeClass('active');
+			$(this).addClass('active tabSelected');
+		});
+		$('#graphtabs a:not(".active")').live('click',function(){
+			$('#graphic li.tabSelected').removeClass('active tabSelected');
+			$('#graphtabs a.active').removeClass('active');
+			$(this).addClass('active');
+			console.info($(this).text());
+			doHighlight($(this).text().toLowerCase());
+		});
+
+	});
+<% end %>
+<!-- Body -->
+<div class="row">
+	<div class='column grid_12'>
+		<ul id="graphtabs" class="hmenu floatright">
+			<li><a href="javascript:;">Mobile</a></li>
+			<li><a href="javascript:;">Social</a></li>
+			<li><a href="javascript:;">Trusted</a></li>
+			<li><a href="javascript:;">Open</a></li>
+		</ul>
+	</div>
+</div>	
+<br />
+<div class="row roundCorners contentBox">
+	<div id="hiw_wrapper" class='column grid_5'>
+		<div id="hiw_textcontent">
+			<h2 class="title">Runtime Kernel</h2>
+			<p class="content">
+				The Runtime Kernel lies at the heart of DB.com. Its patented multi-tenant, metadata driven based design allows DB.com to service thousands of customers, each with their own schemas, triggers and other customizations, in isolation from one another. Continuous deployment, Dynamic virtual schema, Self-optimizing DB
+			</p>
+			<p class="related roundCorners">
+				<b>Related resources</b>
+				
+				<a href="javascript:;">Self tuning Query Optimizer  ></a>
+				
+				<a href="javascript:;">Full text, multi-lingual Search Engine  ></a>
+				
+				<a href="javascript:;">Triggers  ></a>
+			</a>
+		</div>
+	</div>
+	<div class='column grid_7'>	
+		<div id="graphicWrapper">
+			<ul id="graphic">
+				<li class="mobile open">API LAYER</li>
+				<li class="moile social">SOCIAL FRAMEWORK</li>
+				<li class="mobile">RUNTIME KERNEL</li>
+				<li class="social trusted">DATA SECURITY LAYER</li>
+				<li class="trusted">MULTI-TENANT METADATA</li>
+				<li class="trusted">MULTI-TENANT DATA</li>
+				<li class="trusted">INFRAESTRUCTURE LAYER</li>
+			</ul>
+		</div>
+	</div>
+</div>
