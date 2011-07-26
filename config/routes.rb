@@ -1,4 +1,17 @@
 DatabaseCom::Application.routes.draw do
+
+	constraints ({:subdomain=>/trust/}) do
+		match "/" => "trust#home"
+		match "/home" => "trust#home"
+		match "/security" => "trust#security"
+		match "/security/reportsecurityissue" => "trust#security", :subpage => "reportsecurityissue"
+		match "/privacy" => "trust#privacy"
+		match "/privacy/global-privacy" => "trust#privacy", :subpage => "global-privacy"
+		match "/privacy/tools" => "trust#privacy", :subpage => "tools"
+		match "/status" => "trust#status"
+		match "/*anything" => "trust#pagenotfound"
+	end
+
 	# The priority is based upon order of creation:
 	# first created -> highest priority.
 
@@ -55,7 +68,7 @@ DatabaseCom::Application.routes.draw do
 	# This is a legacy wild controller route that's not recommended for RESTful applications.
 	# Note: This route will make all actions in every controller accessible via GET requests.
 	# match ':controller(/:action(/:id(.:format)))'
-	root :to => "site#index" 
+	root :to => "site#index"
 	match ':locale' => 'site#index'
 	scope "(:locale)", :locale => /en|es/ do
 		match ":action" => "site#:action"

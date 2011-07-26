@@ -44,6 +44,10 @@ en:
 #----------------
 # Trust subdomain
 #----------------
+ trust_readmore: "Read more"
+ trust_emailus: "Email us"
+ trust_checkstatus: "Check status"
+ trust_descstatus: "See current status, service performance, and upcoming mantenience."
 
  trust_404_text: "You may have selected an outdated link or typed the page address (URL) incorrectly."
  trust_404_title: "The page you were trying to reach was not found"

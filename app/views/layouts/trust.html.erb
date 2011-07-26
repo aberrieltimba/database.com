@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title><%= yield :pagetitle %> - database.com</title>
-	<%= stylesheet_link_tag "trust/all" %>
+	<%= stylesheet_link_tag "trust/style.css" %>
 	<%= yield :pageCss %>
 	<%= javascript_include_tag :defaults %>
 	<%= yield :pageJs %>
@@ -10,49 +10,13 @@
 </head>
 <body>
 
-<div id="centerwrap">
-	<div id="header">
-		<div id="header-top">
-			<div id="logo"><a href="/" title="Salesforce.com"><img src="/images/trust/logo.gif"/></a></div>
-			<div id="logo-small"><a href="http://www.salesforce.com/" title="Salesforce.com"><img src="/images/trust/logo-small.gif"/></a></div>
-		</div>
-		<div id="header-navigation">
-			<%= render "trust/tabnav" %>
-		</div>
-	</div>
-
-	<div id="container"><div id="content-container"><%= yield %></div></div>
-
-	<div id="footer">
-		<img id="security-accreditations" src="/images/trust/security-accreditations.gif" usemap="#trust_footer_Map"/>
-		<map name="trust_footer_Map">
-			<area shape="rect" coords="824,9,884,64" href="http://www.bsigroup.com/en/Assessment-and-certification-services/Client-directory/CertificateClient-Directory-Search-Results/?pg=1&licencenumber=IS+534200&searchkey=companyXeqXsalesforce" alt="" />
-			<area shape="rect" coords="685,10,812,64" href="http://export.gov/safeharbor" alt="" />
-			<area shape="rect" coords="504,11,597,59" href="http://trust.salesforce.com/trust/assets/pdf/Misc_SysTrust.pdf" alt="" />
-			<area shape="rect" coords="384,8,495,60" href="http://www.truste.org/ivalidate.php?url=www.salesforce.com&sealid=102" alt="" />
-			<area shape="rect" coords="288,7,371,61" href="https://seal.verisign.com/splash?form_file=fdf/splash.fdf&dn=WWW.salesforce.com&lang=en" alt="" />
-
-			<!--
-			<area shape="rect" coords="714,9,846,66" href="http://export.gov/safeharbor" alt="" />
-
-			<area shape="rect" coords="636,10,705,64" href="" alt="" />
-
-			<area shape="rect" coords="537,11,630,60" href="/trust/assets/pdf/Misc_SysTrust.pdf" alt="" target="_new" />
-			<area shape="rect" coords="418,12,532,61" href="http://www.truste.org/ivalidate.php?url=www.salesforce.com&sealid=102" alt="" />
-			<area shape="rect" coords="319,11,409,61" href="https://seal.verisign.com/splash?form_file=fdf/splash.fdf&dn=WWW.salesforce.com&lang=en" alt="" />
-			-->
-		</map>
-
-		<div id="footer-links">
-			1-800-NO-SOFTWARE |
-			<a href="http://www.salesforce.com/company/privacy.jsp">
-				<%=t :trust_PrivacyStatement %></a> |
-			<a href="http://www.salesforce.com/company/security.jsp">
-				<%=t :trust_SecurityStatement %> </a>
-		</div>
-		<img id="footer-shadow" src="/images/trust/footer-shadow.gif" style="margin-bottom:-2px;"/>
-	</div>
-</div>
+    <%= render "trust/header" %>
+	<div id="corpus">
+        <div class="row"><%= yield %></div>
+    </div>
+    <%= render "trust/accreditations" %>
+    
+    <%= render "trust/footer" %>
 
 </body>
 </html>

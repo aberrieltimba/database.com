@@ -11,9 +11,11 @@
 	<%= javascript_include_tag "jquery.validate.min.js" %>
 <% end %>
 
-<div id="left"><img style="margin: 48px 0;" src="/images/trust/quote1_data_privacy_parker.gif"/></div>
+<div id="left">
+    <img src="/images/trust/LOCKIMG.png"/>
+    <%= render "parkerquote" %>
+</div>
 
-<div class="white-bg">
 <div id="center" style="width:784px">
 <div id="content-text">
 	<h1><%=t :trust_security_reportissue_formtitle %></h1>
@@ -76,5 +78,3 @@ $(document).ready(function() {
 });
 
 </script>
-
-</div>
