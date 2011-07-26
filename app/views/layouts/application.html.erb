@@ -14,6 +14,10 @@
 		<%= javascript_include_tag("cuffon") %>
 		<%= javascript_include_tag("helveticaLike_400.font") %>
 		<script type="text/javascript">
+		
+			var ua = navigator.userAgent,
+			clickEvent = (ua.match(/iPad/i)) ? "touchstart" : "click";
+			
 			//Cufon.replace('#dbdcHeader', {fontFamily:'Droid Sans', hover: true});
 			Cufon.replace('.helveticaLike', {fontFamily:'helveticaLike', hover: true});
 			
@@ -32,7 +36,7 @@
 					},
 					function(){
 					$(this).removeClass('hover');
-					});			
+				});			
 			});
 		</script>
 		<script>

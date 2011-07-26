@@ -62,7 +62,7 @@ $(document).ready( function(){
 	
 	slideIntervalId = setTimeout("doSlide('-='+SLIDER_WIDTH+'px',1000);", SLIDER_INTERVAL);
 	
-	$("#EasingIndex ul li:not(.active)").live('click',function(){
+	$("#EasingIndex ul li:not(.active)").live(clickEvent,function(){
 		if(!isSliding){
 			
 			isSliding = true;
