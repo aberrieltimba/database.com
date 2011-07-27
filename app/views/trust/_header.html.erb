@@ -1,0 +1,23 @@
+<div id="header">
+<div class="row">
+    <div id="logo" class="column"><a href="/" title="Database.com"><img src="/images/trust/trustlogo.png"/></a></div>
+    
+    <%
+        action = params[:action]
+        homeclass     = action == "home"     ? "on" : "off"
+        securityclass = action == "security" ? "on" : "off"
+        privacyclass  = action == "privacy"  ? "on" : "off"
+        statusclass   = action == "status"   ? "on" : "off"
+    %>
+    <div class="navMenu column">
+        <a class="<%= homeclass %>" href="/home"><%=t :trust_NavHome %></a>
+        <a class="<%= securityclass %>" href="/security"><%=t :trust_NavSecurity %></a>
+        <a class="<%= privacyclass %>" href="/privacy"><%=t :trust_NavPrivacy %></a>
+        <a class="<%= statusclass %>" href="/status"><%=t :trust_NavStatus %></a>
+        <a class="login" href="https://login.database.com"><%=t :trust_NavLogin %></a>
+    </div>
+</div>
+
+<div id="header-arrow" class="row <%= action %>">&nbsp;</div>
+
+</div>
