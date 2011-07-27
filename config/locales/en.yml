@@ -63,7 +63,8 @@ en:
  trust_NavStatus: "System Status"
  trust_NavTools: "Salesforce.com Tools"
  trust_PrivacyStatement: "Privacy Statement"
- trust_ReportSuspiciousEmail: "Report a Suspicious Email"
+ trust_ReportSuspiciousEmail: "Report a suspicious email"
+ trust_ReportSuspiciousEmail_Desc: "Help keep Database.com secure. Let us know if you find suspicious emails or other communication."
  trust_SecurityStatement: "Security Statement"
 
  trust_home_pagetitle: "Trust.database.com"

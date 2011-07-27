@@ -3,7 +3,7 @@
 <% end %>
 
 <% content_for :pageCss do %>
-	<%= stylesheet_link_tag "trust/reportissue" %>
+	<%= stylesheet_link_tag "trust_reportissue" %>
 <% end %>
 
 <% content_for :pageJs do %>
@@ -16,7 +16,7 @@
     <%= render "parkerquote" %>
 </div>
 
-<div id="center" style="width:784px">
+<div id="center" style="width:auto;border-right:none;">
 <div id="content-text">
 	<h1><%=t :trust_security_reportissue_formtitle %></h1>
 
@@ -38,6 +38,7 @@
 		<div><input type="submit" value="<%=t :trust_security_reportissue_submit %>" alt="<%=t :trust_security_reportissue_submit %>"/></div>
 	</div>
 	</form>
+</div>
 </div>
 
 <script type="text/javascript">

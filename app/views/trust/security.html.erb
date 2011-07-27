@@ -11,7 +11,7 @@
 	<div id="content-text">
 		<p><%=t :trust_security_p1 %></p>
 
-		<h1><%=t :trust_security_h1 %></h1>
+		<h2><%=t :trust_security_h1 %></h2>
 		<p><%=t :trust_security_p11 %></p>
 
 		<h3><%=t :trust_security_h101 %></h3>
@@ -53,13 +53,13 @@
 			<li><%=t :trust_security_l1052 %></li>
 		</ul>
 
-		<h1><%=t :trust_security_h2 %></h1>
+		<h2><%=t :trust_security_h2 %></h2>
 		<ul>
 			<li><%=t :trust_security_l21 %></li>
 			<li><%=t :trust_security_l22 %></li>
 		</ul>
 
-		<h1><%=t :trust_security_h3 %></h1>
+		<h2><%=t :trust_security_h3 %></h2>
 		<ul>
 			<li><%=t :trust_security_l31 %></li>
 			<li><%=t :trust_security_l32 %></li>
@@ -67,21 +67,21 @@
 			<li><%=t :trust_security_l34 %></li>
 		</ul>
 
-		<h1><%=t :trust_security_h4 %></h1>
+		<h2><%=t :trust_security_h4 %></h2>
 		<ul>
 			<li><%=t :trust_security_l41 %></li>
 			<li><%=t :trust_security_l42 %></li>
 			<li><%=t :trust_security_l43 %></li>
 		</ul>
 
-		<h1><%=t :trust_security_h5 %></h1>
+		<h2><%=t :trust_security_h5 %></h2>
 		<ul>
 			<li><%=t :trust_security_l51 %></li>
 			<li><%=t :trust_security_l52 %></li>
 			<li><%=t :trust_security_l53 %></li>
 		</ul>
 
-		<h1><%=t :trust_security_h6 %></h1>
+		<h2><%=t :trust_security_h6 %></h2>
 		<p><%=t :trust_security_p61 %></p>
 		<ul>
 			<li><%=t :trust_security_l611 %></li>
@@ -89,16 +89,16 @@
 			<li><%=t :trust_security_l613 %></li>
 			<li><%=t :trust_security_l614 %></li>
 		</ul>
-		<h1><%=t :trust_security_h7 %></h1>
+		<h2><%=t :trust_security_h7 %></h2>
 		<p><%=t :trust_security_p71 %></p>
 	</div>
 </div>
 
 <div id="right">
-	<div class="ctacontainer ctacontainer-small">
-		<a href="/security/reportsecurityissue" target="_blank"
-			title="<%=t :trust_ReportSuspiciousEmail %>">
-			<img src="/images/trust/cta_report_susp_email_1.gif"/>
-		</a>
-	</div>
+    <div>
+        <h4 class="warn"><%=t :trust_ReportSuspiciousEmail %></h4>
+        <p><%=t :trust_ReportSuspiciousEmail_Desc %> 
+        <a href="/security/reportsecurityissue" target="_blank"
+			title="<%=t :trust_ReportSuspiciousEmail %>"><%=t(:trust_emailus).gsub(" ","&nbsp;").html_safe %></a></p>
+    </div>
 </div>

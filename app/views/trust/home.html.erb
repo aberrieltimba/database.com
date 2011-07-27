@@ -30,12 +30,12 @@
     
     <div>
         <h4 class="warn"><%=t :trust_home_RelTitle %></h4>
-        <p><%=t :trust_home_RelText %> <a href="#"><%=t :trust_readmore %></a></p>
+        <p><%=t :trust_home_RelText %> <a href="#"><%=t(:trust_readmore).gsub(" ","&nbsp;").html_safe %></a></p>
     </div>
         
     <div>
         <h4 class="gear"><%=t :trust_NavStatus %></h4>
-        <p><%=t :trust_descstatus %> <a href="/trust/status"><%=t :trust_checkstatus %></a></p>
+        <p><%=t :trust_descstatus %> <a href="/trust/status"><%=t(:trust_checkstatus).gsub(" ","&nbsp;").html_safe %></a></p>
     </div>
 
 </div>

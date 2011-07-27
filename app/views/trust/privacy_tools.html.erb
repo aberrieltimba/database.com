@@ -144,10 +144,10 @@
 </div>
 
 <div id="right">
-	<div class="ctacontainer ctacontainer-small">
-		<a href="/security/reportsecurityissue" target="_blank"
-			title="<%=t :trust_ReportSuspiciousEmail %>">
-			<img src="/images/trust/cta_report_susp_email_1.gif"/>
-		</a>
-	</div>
+    <div>
+        <h4 class="warn"><%=t :trust_ReportSuspiciousEmail %></h4>
+        <p><%=t :trust_ReportSuspiciousEmail_Desc %> 
+        <a href="/security/reportsecurityissue" target="_blank"
+			title="<%=t :trust_ReportSuspiciousEmail %>"><%=t(:trust_emailus).gsub(" ","&nbsp;").html_safe %></a></p>
+    </div>
 </div>
