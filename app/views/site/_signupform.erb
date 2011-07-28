@@ -15,8 +15,9 @@ function beforeSubmit(){
     <%= hidden_field_tag "formName", "Apttus_Platform_Trial" %>
 
     <!-- TODO: Update Success and Failure Page -->
-    <%= hidden_field_tag "successPage", "http://www.salesforce.com/form/trial/conf/freetrial-conf.jsp" %>
-    <%= hidden_field_tag "failPage", "http://www.salesforce.com/form/trial/conf/freetrial-error.jsp" %>
+    <% @baseurl = "http://" + request.host_with_port + "/" + locale.to_s + "/"%>
+    <%= hidden_field_tag "successPage", @baseurl + "signup_success" %>
+    <%= hidden_field_tag "failPage", @baseurl + "signup_error" %>
 
     <!-- TODO: Add Product Interest to specify your trialforce solution -->
     <%= hidden_field_tag "Product_Interest__c", "Database.com" %>

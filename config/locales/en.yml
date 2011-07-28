@@ -41,6 +41,14 @@ en:
    usernameisemail: "Username must be in the form of an email"
    reqmsa: "Please read an agree to the Master Subscription Agreement"
 
+  signup_error:
+   title: "We were unable to complete your request at this time"
+   text: "Thank you for your interest in salesforce.com. If you have signed up previously, an email has been sent to you with further information. For immediate assistance, please feel free to contact us at 1-800-NO-SOFTWARE between 6:00 AM and 6:00 PM Pacific Time (PT), Monday through Friday."
+
+  signup_success:
+   title: "Congratulations! Your Trial Account Is Ready"
+   text: "Check your in box for the first in a series of emails guiding you through your free 30-day trial to ensure that you experience everything that salesforce.com's on-demand solution offers."
+
 #----------------
 # Trust subdomain
 #----------------
