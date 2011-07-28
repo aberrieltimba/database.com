@@ -1,60 +1,98 @@
+<script type="text/javascript">
+function beforeSubmit(){
+    // Servlet requires that this field is 'on'. Not '1', not 'true', not 'yes', but 'on'.
+    $("#SubscriptionAgreement").val( $("#msa").val() ? 'on' : 'off' );
+}
+</script>
+
 <div id="registerform" class="grid_8" style="display:none;" >
-<%= form_tag("#", :id => "reg_form") do %>
-	<%= field_set_tag t(".aboutyou") do %>
-		<p><%= label_tag :firstname, raw(t(".firstname") + req) %><%= text_field_tag :firstname %></p>
-		<p><%= label_tag :lastname, raw(t(".lastname") + req) %><%= text_field_tag :lastname %></p>
-		<p><%= label_tag :email, raw(t(".email") + req) %><%= text_field_tag :email %></p>
-		<p><%= label_tag :jobrole, raw(t(".jobrole") + req) %><%= select_tag :jobrole, options_for_select([ ["Choose one...",""],["Database Administrator","Database Administrator"],["Developer","Developer"],["Architect/CTO","Architect/CTO"],["Administrator","Administrator"],["IT Manager/Executive","IT Manager/Executive"],["Business Manager/Executive","Business Manager/Executive"] ])  %></p>
+  <%= form_tag("http://www.salesforce.com/leadcapture/PartnerSignupServlet", :id => "reg_form", :onSubmit => "beforeSubmit()") do %>
+
+    <%= hidden_field_tag "process_form", "true" %>
+    <%= hidden_field_tag "LeadSource", "Trialforce" %>
+
+    <!-- TODO: Add Signup Config Item Name of Config record as formName -->
+    <%= hidden_field_tag "formName", "Apttus_Platform_Trial" %>
+
+    <!-- TODO: Update Success and Failure Page -->
+    <%= hidden_field_tag "successPage", "http://www.salesforce.com/form/trial/conf/freetrial-conf.jsp" %>
+    <%= hidden_field_tag "failPage", "http://www.salesforce.com/form/trial/conf/freetrial-error.jsp" %>
+
+    <!-- TODO: Add Product Interest to specify your trialforce solution -->
+    <%= hidden_field_tag "Product_Interest__c", "Database.com" %>
+
+    <!-- TODO: Update Language if needed
+        'en_US' - English
+        'nl_NL' - Dutch
+        'fr' - French
+        'de' - German
+        'it' - Italian
+        'es' - Spanish
+        'sv' - Swedish
+        'pt_BR' - Portuguese  (Brazilian)
+        'ja' - Japanese
+        'zh_CN' - Chinese (Simplified)
+        'zh_TW' - Chinese (Traditional)
+        'ko' - Korean
+        'th' - Thai
+        'fi' - Finnish
+    -->
+    <%= hidden_field_tag "CompanyLanguage", "en_US" %>
+
+    <%= field_set_tag t(".aboutyou") do %>
+		<p><%= label_tag :FirstName, raw(t(".firstname") + req) %><%= text_field_tag :FirstName %></p>
+		<p><%= label_tag :LastName, raw(t(".lastname") + req) %><%= text_field_tag :LastName %></p>
+		<p><%= label_tag :Email, raw(t(".email") + req) %><%= text_field_tag :Email %></p>
+		<p><%= label_tag :JobRole, raw(t(".jobrole") + req) %><%= select_tag :JobRole, options_for_select(job_role_list)  %></p>
 	<% end %>
 
 	<%= field_set_tag t(".aboutyourcompany") do %>
-		<p><%= label_tag :country, raw(t(".country") + req) %><%= select_tag :country, options_for_select([ ["Choose one...",""],["United States","US"],["Afghanistan","AF"],["Albania","AL"],["Algeria","DZ"],["American Samoa","AS"],["Andorra","AD"],["Anguilla","AI"],["Antarctica","AQ"],["Antigua And Barbuda","AG"],["Argentina","AR"],["Armenia","AM"],["Aruba","AW"],["Australia","AU"],["Austria","AT"],["Ayerbaijan","AZ"],["Bahamas, The","BS"],["Bahrain","BH"],["Bangladesh","BD"],["Barbados","BB"],["Belarus","BY"],["Belize","BZ"],["Belgium","BE"],["Benin","BJ"],["Bermuda","BM"],["Bhutan","BT"],["Bolivia","BO"],["Bouvet Is","BV"],["Bosnia and Herzegovina","BA"],["Botswana","BW"],["Brazil","BR"],["British Indian Ocean Territory","IO"],["Brunei","BN"],["Bulgaria","BG"],["Burkina Faso","BF"],["Burundi","BI"],["Cambodia","KH"],["Cameroon","CM"],["Canada","CA"],["Cape Verde","CV"],["Cayman Is","KY"],["Central African Republic","CF"],["Chad","TD"],["Chile","CL"],["China","CN"],["China (Hong Kong S.A.R.)","HK"],["China (Macau S.A.R.)","MO"],["Christmas Is","CX"],["Cocos (Keeling) Is","CC"],["Colombia","CO"],["Comoros","KM"],["Cook Islands","CK"],["Costa Rica","CR"],["Cote D'Ivoire (Ivory Coast)","CI"],["Croatia (Hrvatska)","HR"],["Cyprus","CY"],["Czech Republic","CZ"],["Democratic Republic of the Congo","CD"],["Denmark","DK"],["Dominica","DM"],["Dominican Republic","DO"],["Djibouti","DJ"],["East Timor","TP"],["Ecuador","EC"],["Egypt","EG"],["El Salvador","SV"],["Equatorial Guinea","GQ"],["Eritrea","ER"],["Estonia","EE"],["Ethiopia","ET"],["Falkland Is (Is Malvinas)","FK"],["Faroe Islands","FO"],["Fiji Islands","FJ"],["Finland","FI"],["France","FR"],["French Guiana","GF"],["French Polynesia","PF"],["French Southern Territories","TF"],["F.Y.R.O. Macedonia","MK"],["Gabon","GA"],["Gambia, The","GM"],["Georgia","GE"],["Germany","DE"],["Ghana","GH"],["Gibraltar","GI"],["Greece","GR"],["Greenland","GL"],["Grenada","GD"],["Guadeloupe","GP"],["Guam","GU"],["Guatemala","GT"],["Guinea","GN"],["Guinea-Bissau","GW"],["Guyana","GY"],["Haiti","HT"],["Heard and McDonald Is","HM"],["Honduras","HN"],["Hungary","HU"],["Iceland","IS"],["India","IN"],["Indonesia","ID"],["Ireland","IE"],["Israel","IL"],["Italy","IT"],["Jamaica","JM"],["Japan","JP"],["Jordan","JO"],["Kayakhstan","KZ"],["Kenya","KE"],["Kiribati","KI"],["Korea, South","KR"],["Kuwait","KW"],["Kyrgyzstan","KG"],["Laos","LA"],["Latvia","LV"],["Lebanon","LB"],["Lesotho","LS"],["Liberia","LR"],["Liechtenstein","LI"],["Lithuania","LT"],["Luxembourg","LU"],["Madagascar","MG"],["Malawi","MW"],["Malaysia","MY"],["Maldives","MV"],["Mali","ML"],["Malta","MT"],["Marshall Is","MH"],["Mauritania","MR"],["Mauritius","MU"],["Martinique","MQ"],["Mayotte","YT"],["Mexico","MX"],["Micronesia","FM"],["Moldova","MD"],["Monaco","MC"],["Mongolia","MN"],["Montserrat","MS"],["Morocco","MA"],["Mozambique","MZ"],["Myanmar","MM"],["Namibia","NA"],["Nauru","NR"],["Nepal","NP"],["Netherlands, The","NL"],["Netherlands Antilles","AN"],["New Caledonia","NC"],["New Zealand","NZ"],["Nicaragua","NI"],["Niger","NE"],["Nigeria","NG"],["Niue","NU"],["Norway","NO"],["Norfolk Island","NF"],["Northern Mariana Is","MP"],["Oman","OM"],["Pakistan","PK"],["Palau","PW"],["Panama","PA"],["Papua new Guinea","PG"],["Paraguay","PY"],["Peru","PE"],["Philippines","PH"],["Pitcairn Island","PN"],["Poland","PL"],["Portugal","PT"],["Puerto Rico","PR"],["Qatar","QA"],["Republic of the Congo","CG"],["Reunion","RE"],["Romania","RO"],["Russia","RU"],["Saint Helena","SH"],["Saint Kitts And Nevis","KN"],["Saint Lucia","LC"],["Saint Pierre and Miquelon","PM"],["Saint Vincent And The Grenadines","VC"],["Samoa","WS"],["San Marino","WM"],["Sao Tome and Principe","ST"],["Saudi Arabia","SA"],["Senegal","SN"],["Seychelles","SC"],["Sierra Leone","SL"],["Singapore","SG"],["Slovakia","SK"],["Slovenia","SI"],["Solomon Islands","SB"],["Somalia","SO"],["South Africa","ZA"],["South Georgia &amp; The S. Sandwich Is","GS"],["Spain","ES"],["Sri Lanka","LK"],["Suriname","SR"],["Svalbard And Jan Mayen Is","SJ"],["Swaziland","SZ"],["Sweden","SE"],["Switzerland","CH"],["Syria","SY"],["Taiwan","TW"],["Tajikistan","TJ"],["Tanzania","TZ"],["Thailand","TH"],["Timor-Leste","TL"],["Togo","TG"],["Tokelau","TK"],["Tonga","TO"],["Trinidad And Tobago","TT"],["Tunisia","TN"],["Turkey","TR"],["Turks And Caicos Is","TC"],["Turkmenistan","TM"],["Tuvalu","TV"],["Uganda","UG"],["Ukraine","UA"],["United Arab Emirates","AE"],["United Kingdom","GB"],["United States Minor Outlying Is","UM"],["Uruguay","UY"],["Uzbekistan","UZ"],["Vanuatu","VU"],["Vatican City State (Holy See)","VA"],["Venezuela","VE"],["Vietnam","VN"],["Virgin Islands (British)","VG"],["Virgin Islands (US)","VI"],["Wallis And Futuna Islands","WF"],["Western Sahara","EH"],["Yemen","YE"],["Zambia","ZM"],["Zimbabwe","ZW"],["Other","__"]], "US")  %></p>
-		<p><%= label_tag :postalcode, raw(t(".postalcode") + req) %><%= text_field_tag :postalcode %></p>
-		<p><%= label_tag :company, raw(t(".company") + req) %><%= text_field_tag :company %></p>
+		<p><%= label_tag :Country, raw(t(".country") + req) %><%= select_tag :Country, options_for_select(country_list, "US") %></p>
+		<p><%= label_tag :PostalCode, raw(t(".postalcode") + req) %><%= text_field_tag :PostalCode %></p>
+		<p><%= label_tag :Company, raw(t(".company") + req) %><%= text_field_tag :Company %></p>
 	<% end %>
 
 	<%= field_set_tag t(".devforcemembership") do %>
 		<p><%=t ".devforcedescription" %></p>
-		<p><%= label_tag :username, raw(t(".username") + req) %><%= text_field_tag :username %></p>
+		<p><%= label_tag :UserUsername, raw(t(".username") + req) %><%= text_field_tag :UserUsername %></p>
 	<% end %>
 
 	<%= field_set_tag t(".foryoursecurity") do %>
-		<p><%= recaptcha_tags %></p>
 		<p><%= check_box_tag :msa %><%= label_tag :msa, t(".iagreemsa", :msa => "<a href='http://www.salesforce.com/company/agreements/developer_edition/'>" + t(".msa") + "</a>").html_safe %></p>
+        <%= hidden_field_tag :SubscriptionAgreement, "off" %>
 	<% end %>
 
 	<p>
-		<%= submit_tag :submit %>
+        <input type="submit" value="Sign up"/>
 		<input type="button" class="simplemodal-close" value="Close"/>
 	</p>
-<% end %>
+  <% end %>
 </div>
 
 <script type="text/javascript">
 
 $(document).ready(function() {
-
 	$("#reg_form").validate({
 		rules: {
-			firstname: "required",
-			lastname: "required",
-			email: { required: true, email: true },
-			jobrole: "required",
-			country: "required",
-			postalcode: "required",
-			company: "required",
-			username: { required: true, email: true },
+			FirstName: "required",
+			LastName: "required",
+			Email: { required: true, email: true },
+			JobRole: "required",
+			Country: "required",
+			PostalCode: "required",
+			Company: "required",
+			UserUsername: { required: true, email: true },
 			msa: "required"
 		},
 		messages: {
-			firstname: "<%=t ".reqfirstname"%>",
-			lastname: "<%=t ".reqlastname"%>",
-			email: "<%=t ".reqemail"%>",
-			jobrole: "<%=t ".reqjobrole"%>",
-			country: "<%=t ".reqcountry"%>",
-			postalcode: "<%=t ".reqpostalcode"%>",
-			company: "<%=t ".reqcompany"%>",
-			username: { required: "<%=t ".requsername"%>", email: "<%=t ".usernameisemail"%>" },
+			FirstName: "<%=t ".reqfirstname"%>",
+			LastName: "<%=t ".reqlastname"%>",
+			Email: "<%=t ".reqemail"%>",
+			JobRole: "<%=t ".reqjobrole"%>",
+			Country: "<%=t ".reqcountry"%>",
+			PostalCode: "<%=t ".reqpostalcode"%>",
+			Company: "<%=t ".reqcompany"%>",
+			UserUsername: { required: "<%=t ".requsername"%>", email: "<%=t ".usernameisemail"%>" },
 			msa: "<%=t ".reqmsa"%>"
 		},
 		errorPlacement: function(error, element) {

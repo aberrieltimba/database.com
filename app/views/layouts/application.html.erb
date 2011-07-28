@@ -14,19 +14,19 @@
 		<%= javascript_include_tag("cuffon") %>
 		<%= javascript_include_tag("helveticaLike_400.font") %>
 		<script type="text/javascript">
-		
+
 			var ua = navigator.userAgent,
 			clickEvent = (ua.match(/iPad/i)) ? "touchstart" : "click";
-			
+
 			//Cufon.replace('#dbdcHeader', {fontFamily:'Droid Sans', hover: true});
 			Cufon.replace('.helveticaLike', {fontFamily:'helveticaLike', hover: true});
-			
+
 		</script>
 		<!-- Script Definition -->
 		<%= javascript_include_tag("jquery-1.6.2.min") %>
 		<%= javascript_include_tag("jquery.easing") %>
 		<%= javascript_include_tag("jquery.simplemodal.1.4.1.min") %>
-		<%= javascript_include_tag("jquery.validate.min") %>		
+		<%= javascript_include_tag("jquery.validate.min") %>
 		<%= yield(:customLibs) %>
 		<script>
 			$(document).ready(function(){
@@ -36,7 +36,7 @@
 					},
 					function(){
 					$(this).removeClass('hover');
-				});			
+				});
 			});
 		</script>
 		<script>
@@ -45,7 +45,7 @@
 		<!-- Meta Tags -->
 		<%= csrf_meta_tag %>
 	</head>
-	
+
 	<body>
 		<div id="dbdcHeader">
 			<div class="row">
@@ -60,13 +60,12 @@
 					</a>
 				</div>
 				<div class='navMenu column grid_7'>
-					
+
 					<span id="authbox" class="floatright margin_0_5 cascade">
 						<a href="Javascript:;">Login </a>
-						| 
-						<a href="Javascript:;">Signup</a>
+						<a href="Javascript:;" onclick="$('#registerform').modal();">Signup</a>
 					</span>
-					
+
 					<span class="floatright margin_0_5 cascade">
 						<%= link_to "How it Works" , {:controller => "site", :action => "howitworks" ,:locale => I18n.locale} %>
 						<a href="Javascript:;">Pricing</a>
@@ -74,19 +73,21 @@
 						<a href="Javascript:;">Resources</a>
 						<a href="Javascript:;">Support</a>
 					</span>
-					
+
 
 				</div>
 				<div  class='column grid_2'>
-					
+
 				</div>
-			</div>	
+			</div>
 		</div>
 		<br />
 		<%= yield %>
 		<br />
-        
+
         <%= render "footer" %>
-		
-	</body>	
+
+        <%= render "signupform" %>
+
+	</body>
 </html>
