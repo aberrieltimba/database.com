@@ -12,7 +12,9 @@ function beforeSubmit(){
     <%= hidden_field_tag "LeadSource", "Trialforce" %>
 
     <!-- TODO: Add Signup Config Item Name of Config record as formName -->
-    <%= hidden_field_tag "formName", "Apttus_Platform_Trial" %>
+    <%= hidden_field_tag "formName", "db.com" %>
+    <%= hidden_field_tag "CompanyTemplate", "db_default" %>
+    <%= hidden_field_tag "EditionDefinitionUri", "edition:DB.DBEdition" %>
 
     <!-- TODO: Update Success and Failure Page -->
     <% @baseurl = "http://" + request.host_with_port + "/" + locale.to_s + "/"%>
