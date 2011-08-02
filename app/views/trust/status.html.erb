@@ -2,16 +2,27 @@
 	<%=t :trust_status_pagetitle %>
 <% end %>
 
-<div id="status-container" style="margin-left:20px;">
+<% content_for :pageJs do %>
+    <%= javascript_include_tag "jquery-1.6.2.min.js" %>
+    <%= javascript_include_tag "jquery.iframe-auto-height.plugin.1.4.0.min.js" %>
+<% end %>
+
+<div id="status-container" style="margin:20px 0;">
+
 	<iframe id="data_frame1" scrolling="no" height="932" frameborder="0"
-		width="959" src="http://trust.salesforce.com/status-data/status.jsp" marginheight="0"
+		width="959" src="/status/status" marginheight="0"
 		marginwidth="0" name="data_frame1"></iframe>
 	<br />
 	<iframe id="data_frame2" scrolling="no" height="100" frameborder="0"
-		width="959" src="http://trust.salesforce.com/status-data/maintenance.jsp" marginheight="0"
+		width="959" src="/status/maintenance" marginheight="0"
 		marginwidth="0" name="data_frame2"></iframe>
 	<br />
 	<iframe id="data_frame3" scrolling="no" height="0" frameborder="0"
-		width="959" src="http://trust.salesforce.com/status-data/release-window.jsp" marginheight="0"
+		width="959" src="/status/releasewindow" marginheight="0"
 		marginwidth="0" name="data_frame3"></iframe>
+
 </div>
+
+<script type="text/javascript">
+    jQuery("iframe").iframeAutoHeight();
+</script>

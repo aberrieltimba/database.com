@@ -8,7 +8,12 @@ DatabaseCom::Application.routes.draw do
 		match "/privacy" => "trust#privacy"
 		match "/privacy/global-privacy" => "trust#privacy", :subpage => "global-privacy"
 		match "/privacy/tools" => "trust#privacy", :subpage => "tools"
+
 		match "/status" => "trust#status"
+        match "/status/status" => "status#status_status"
+        match "/status/maintenance" => "status#status_maintenance"
+        match "/status/releasewindow" => "status#status_releasewindow"
+
 		match "/*anything" => "trust#pagenotfound"
 	end
 
