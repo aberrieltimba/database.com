@@ -1,42 +1,335 @@
 <% content_for :pageTitle do %>Database.Com | Pricing<% end %>
+<% content_for :customStyleSheets do %> <%= stylesheet_link_tag("pricing") %> <% end %>
+<%= javascript_include_tag("jquery.event.drag-2.0.min") %>
 <% content_for :customJs do %>
+
+	var interval = 10;
+	var duration= 1000;
+	var shake= 3;
+	var vibrateIndex = 0;	
+	var elemento;
+	
+	var slideValues ={
+		getTotalPrice : function(){
+			var total = 0;
+			for(var i in this){
+				if( typeof this[i].getPrice != 'undefined' ){
+					total += this[i].getPrice();
+				}
+			}
+			return total;
+		},
+		std : {
+			index : 3,
+			stepSize : 1,
+			slideRange : {
+				max : 500,
+				min  : 3
+			},
+			getPrice : function(){
+				return (this.index - 3)*10;
+			}
+		},
+		light : {
+			index : 0,
+			stepSize : 100,
+			slideRange : {
+				max : 50000,
+				min  : 0
+			},
+			getPrice : function(){
+				return Math.round((this.index/100)*0.10);
+			}
+		},
+		records: {
+			index : 100000,
+			stepSize : 100000,
+			slideRange : {
+				max : 50000000,
+				min  : 100000
+			},
+			getPrice : function(){
+				return ((this.index-100000)/100000)*10;
+			}
+		},
+		api : {
+			index : 50000,
+			stepSize : 150000,
+			slideRange : {
+				max : 75050000,
+				min  : 50000
+			},
+			getPrice : function(){
+				return ((this.index-50000)/150000)*10;
+			}
+		}
+	}
+	//
+		
+	var vibrate = function(){
+		elemento.stop(true,false).css({left: 20+Math.round(Math.random() * shake) - ((shake + 1) / 2) +'px'});
+    }
+    
+    var stopVibration = function() {
+		clearInterval(vibrateIndex);
+		elemento.stop(true,false).css({left: '20px'});
+    };
+	
+	function hideContactDialog(){
+		
+		$( '#contactDialog .modal' ).clearQueue();
+		$( '#contactDialog .modal' ).animate(
+		{	
+			width: ['0', 'easeOutBounce'],
+			height: ['0', 'easeOutBounce'],
+			"margin-top": ['0', 'easeOutBounce'],
+			"margin-left": ['0', 'easeOutBounce']
+		},
+		{
+			"duration": 1000,
+			"easing": "easeInOutBounce",
+			"complete":function(){
+				$( '#contactDialog' ).hide();
+			}
+		});
+		
+		
+	}
+	
 	$(document).ready(function () {
+	
 		// Active Tab Styling
 		$($(".menu_nav ul li")[1]).addClass('active');
+		
+		$('.pricingslider .cursor').bind('drag',function( other,event){
+			
+			var sindex= 0;
+			var target = $(event.target);
+			var targetParent = $(event.target.parentNode);
+			
+			var slideRange = slideValues[target.attr('jsMap')].slideRange;
+			
+			var slidelimit =  targetParent.height() - target.height();
+			
+			var steps = (slideRange.max - slideRange.min) /slideValues[target.attr('jsMap')].stepSize;
+			
+			if(steps > slidelimit){
+				steps = slidelimit;
+			}
+			
+			// Normalize Steps
+			var stepRange = slidelimit / steps;
+			
+			var realOffset = Math.round((event.offsetY - targetParent.offset().top)/stepRange) *stepRange ;
+			
+			if( realOffset >= 0 && realOffset <= slidelimit){
+				sindex = realOffset;
+			}else{
+				if(realOffset < 0){
+					
+					sindex = 0;
+					
+					var displayContactUs = true;
+					
+				}else{
+					
+					sindex = slidelimit;
+
+				}
+			}
+			
+			$( this ).css({
+				top: Math.round( sindex )
+			});
+			
+			var valmax = steps * slideValues[target.attr('jsMap')].stepSize;
+			
+			var xval = slidelimit - sindex;
+			
+			var shownIndex =  ((xval*valmax) / slidelimit) + slideRange.min;
+			
+			
+			if(shownIndex>=1000){
+				$(this).children('.amount').text(shownIndex/1000+'K');
+			}else{
+				$(this).children('.amount').text(shownIndex);
+			}
+			slideValues[target.attr('jsMap')].index = shownIndex;
+			
+			targetParent.siblings('.pricingheader').children('.price').text(slideValues[target.attr('jsMap')].getPrice());
+			
+			$('#pricingtotal .pricingheader .price').text(slideValues.getTotalPrice());
+			
+			if(displayContactUs && $( '#contactDialog .modal' ).queue().length == 0){
+				
+				$( '#contactDialog' ).show();
+				
+				$( '#contactDialog .modal' ).animate(
+				{	
+					width: ['300px', 'easeOutBounce'],
+					height: ['150px', 'easeOutBounce'],
+					"margin-top": ['-75px', 'easeOutBounce'],
+					"margin-left": ['-150px', 'easeOutBounce']
+				},
+				{
+					"duration": 1000,
+					"easing": "easeInOutBounce",
+					"complete":function(){
+						//
+					}
+				});
+				
+			}
+
+		});
 	});
 <% end %>
 <!-- Body -->
-<div class="row">
-	<div class='details column grid_12'>
-		<h2>Getting started with Database.com is free</h2> 
-	</div>
-</div>	
-<div class="row">
-	<div class='details column grid_4'> 
-		<h3>Free to Get Started</h3>
-		<ul>
-			<li>100,000 records</li>
-			<li>50,000 transactions per month*</li>
-			<li>3 enterprise users</li>
-		</ul>
+	
+	<div id="contactDialog">
+		<div class="overlay">&nbsp;</div>
+		<div class="modal roundCorners">
+			<h1>Contact us</h1>
+			at 1-800-NO-SOFTWARE (1-800-667-6389 ) <br />
+			for questions or larger resource needs.
+			<br />
+			<a href="javascript:;" onClick="hideContactDialog()">Close This</a>
+		</div>
 	</div>
 	
-	<div class='details column grid_4'> 
-		<h3>Enterprise Services</h3>
-		<span>$10 / user / month</span>
-		<ul>
-			<li>Identity</li>
-			<li>Authentication</li>
-			<li>Row-level Security</li>
-		</ul>
-	</div>
-	
-	<div class='details column grid_4'> 
-		<h3>Additional Capacity</h3>
-		<ul>
-			<li>$10 / month / additional 100,000 records</li>
-			<li>$10 / month / additional 150,000 transactions</li>
-			<li>$10 / month / 100 light users (authentication only)</li>
-		</ul>
-	</div>
-</div>
+	<div id="pricingBody" class="row roundCorners contentBox">
+		
+		<div class='column grid_2 backGray gutterPadding'>
+			<!-- -->
+			<div class="pricingheader">
+				<span class="cat">Users</span>
+				<br />
+				<span class="sign">$</span>
+				<span class="price">0</span>
+			</div>
+			<!-- -->
+			<div class="pricingslider">
+				<%= image_tag("pricing/slideanchor.png") %>
+				<div class="cursor" jsMap="std">
+					<div class="label">
+						Users
+					</div>
+					<span class="amount">3</span>
+				</div>
+			</div>
+			<!-- -->
+			<div class="pricingdesc">
+				<%= image_tag("pricing/users.png") %>
+				<b>Users</b><br />
+				Includes authentication, profiles (functional access to objects, fields and platform functions) and sharing (granular data access control down to the level of individual records)
+			</div>
+		</div>
+		<div class='column grid_2 backGray gutterPadding'>
+			<!-- -->
+			<div class="pricingheader">
+				<span class="cat">Light Users</span>
+				<br />
+				<span class="sign">$</span>
+				<span class="price">0</span>
+			</div>
+			<!-- -->
+			<div class="pricingslider">
+				<%= image_tag("pricing/slideanchor.png") %>
+				<div class="cursor" jsMap="light">
+					<div class="label">
+						Users
+					</div>
+					<span class="amount">0</span>
+				</div>
+			</div>
+			<!-- -->
+			<div class="pricingdesc">
+				<%= image_tag("pricing/users.png") %>
+				<b>Light Users</b><br />
+				Includes authentication and profiles (functional access to objects, fields and platform functions).
+			</div>
+		</div>
+		<div class='column grid_2 backGray gutterPadding'>
+			<!-- -->
+			<div class="pricingheader">
+				<span class="cat">Records</span>
+				<br />
+				<span class="sign">$</span>
+				<span class="price">0</span>
+			</div>
+			<!-- -->
+			<div class="pricingslider">
+				<%= image_tag("pricing/slideanchor.png") %>
+				<div class="cursor" jsMap="records">
+					<div class="label">
+						Records
+					</div>
+					<span class="amount">0</span>
+				</div>
+			</div>
+			<!-- -->
+			<div class="pricingdesc">
+				<%= image_tag("pricing/records.png") %>
+				<b>Records</b><br />
+				The total number of data records that you can store within your database.
+			</div>
+		</div>
+		<div class='column grid_2 backGray gutterPadding'>
+			<!-- -->
+			<div class="pricingheader">
+				<span class="cat">API Calls</span>
+				<br />
+				<span class="sign">$</span>
+				<span class="price">0</span>
+			</div>
+			<!-- -->
+			<div class="pricingslider">
+				<%= image_tag("pricing/slideanchor.png") %>
+				<div class="cursor" jsMap="api">
+					<div class="label">
+						API calls
+					</div>
+					<span class="amount">0</span>
+				</div>
+			</div>
+			<!-- -->
+			<div class="pricingdesc">
+				<%= image_tag("pricing/apicalls.png") %>
+				<b>API calls</b><br />
+				Transactions are the number of API calls that you can make within a month period. API calls are enforced on a rolling 24 hour window total equal to the number of calls per month divided by 30.
+			</div>
+		</div>
+		<div id="pricingtotal" class='column grid_4 backWhite gutterPadding'>
+			
+			<div class="pricingheader">
+				<span class="cat">Total</span>
+				<span style="font-size:1em;vertical-align: top;">Month</span>
+				<br />
+				<span class="sign">$</span>
+				<span class="price">0</span>
+			</div>
+			<!-- -->
+			<div class="pricingdesc">
+				<b>What&#39;s included?</b>
+				<br />
+				<span>Every databse.com account includes the following for free:</span>
+				<ul>
+					<li>3 Standard Users</li>
+					<li>3 Administration Users</li>
+					<li>100,000 records</li>
+					<li>50,000 transactions</li>
+					<li>1 Developer Sandbox (link to sandbox description?)</li>
+					<li>developer community membership</li>
+					<li>Support - Online case submission, 2-business-day responses. <a href="http://www.salesforce.com/services-training/customer-support/">See Premier Success Plans</a> for additional support offerings.</li>
+				</ul>
+				<span>Contact us at 1-800-NO-SOFTWARE (1-800-667-6389 ) for questions or larger resource needs.</span>	
+				
+				<div class="signup">
+					<span>Instant access to your free database</span>
+					<a href="Javascript:;" onclick="$('#registerform').modal();" ><%= image_tag("pricing/signupbutton.png") %></a>
+				</div>
+				
+			</div>
+
+		</div>
+	</div>	

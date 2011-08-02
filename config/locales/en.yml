@@ -4,6 +4,35 @@ en:
  site:
   howitworks:
    ptitle: "How it works"
+   mobile:
+    title: Mobile
+    text: 
+     - Today’s mobile applications are leading to more distributed architectures. Database.com’s sophisticated API capabilities enable you to expose custom REST APIs that simplify mobile client development by aggregating and encapsulating complex, transactional logic within the cloud to enable more efficient and robust communication between the device and your data. Read more >> (link to http://www.salesforce.com/us/developer/docs/chatterapipre/index.htm)
+     - Database.com’s social framework automatically generates data feeds that push relevant information to each individual user. This provides a very efficient way to consume data from mobile devices with a limited form factor. Read more >> ( link to http://wiki.developerforce.com/index.php/Chatter_API) 
+     - Integrated Identity & Access Management and support for OAuth 2 enforces your data access policies regardless of whether your users are accessing their data from desktop, web, or mobile applications. Read more >> (link to http://wiki.database.com/page/Database.com:_Secure,_Private,_and_Trustworthy)
+    related: 'related'
+   social:
+    title: Social
+    text:
+     - Database.com’s sophisticated identity and access management capabilities enable secure collaboration by ensuring that you can get the right data, to the right people, at the right time, with the right access permissions. Read more>> (link to http://wiki.database.com/page/Database.com:_Secure,_Private,_and_Trustworthy)
+     - Database.com includes a powerful social framework based on concepts that have been proven effective within consumer social networking applications. Data feeds, profiles, groups, comments and ‘likes’ provide a framework for your end users to collaborate within the context of your application and business data. Read more>> (link to http://wiki.developerforce.com/index.php/Chatter_API)
+    related: 'related'
+   trusted:
+    title: Trusted
+    text:
+    - You need a platform you can trust. A platform that’s secure, reliable, and fast. The cloud infrastructure beneath Database.com has been fine-tuned over the past 10 years. It powers nearly 97,700 businesses running more than 185,000 applications that 3 million users count on every day 
+     - You can’t compromise when it comes to enterprise-level security. Database.com is road-tested and trusted by nearly 97,700 companies, including many of the world’s most security-conscious organizations, such as banks and health care providers. Read more >> (link to http://wiki.database.com/page/Database.com:_Secure,_Private,_and_Trustworthy)
+     - All Database.com runs on world-class data centers with backup, failover, and disaster-recovery facilities. Database.com has had a proven 99.9 percent uptime record for years. Read more >> (link to http://www.salesforce.com/platform/cloud-infrastructure/reliability.jsp -- host a rebranded version of this page that points to trust.database.com)  
+    - Database.com is used by many of the world's largest enterprises, including Cisco, Japan Post Network, and Symantec. Applications can automatically scale from a few users to millions, as needed. Read more >> (link to http://www.salesforce.com/platform/cloud-infrastructure/scalability.jsp -- host a rebranded version of this page? )  
+    related: 'related'
+   open: 
+    title: Open
+    text: 
+    - You can access Database.com from any app, written in any language, running on any platform using one of the open, standards based APIs that it provides.
+    - The Database.com APIs reduce the effort to integrate with other tiers of your architecture whether they be in external cloud services or on premise. More than half of all traffic on the Force.com platform comes from system-to-system integration through the Database.com APIs, making them the most trusted and successful enterprise APIs in the market. 
+    - The Database.com API suite includes the SOAP API, REST API, Bulk API (for handling large data volumes), Streaming API (for real-time push notifications) and Chatter API. In addition, you can build and expose custom SOAP or REST APIs for your Database.com data to meet your specific requirements. Read more >> (link to tech docs index)
+    - Language toolkits are also available to further simplify development by providing a native binding to the SOAP API for Java, Ruby, PHP, Flex, iOS and Android. Read more >> (link to toolkit resources) 
+    related: 'related'
   index:
    ptitle: "Home"
 

@@ -1,10 +1,47 @@
-<% content_for :pageTitle do %>Database.Com | How it Works<% end %>
+<% content_for :pageTitle do %>Database.Com | <%= t ".ptitle"%> <% end %>
 
 <% content_for :customStyleSheets do %> <%= stylesheet_link_tag("howitworks") %> <% end %>
 <% content_for :customLibs do %>
-	<%= javascript_include_tag("jquery.corner") %>
+	
 <% end %>
 <% content_for :customJs do %>
+	
+	hiw = {
+		tabs : {
+			mobile : {
+				title : "<%= t ".mobile.title" %>",
+				text: "<%= t ".mobile.text" %>".split('&quot;'),
+				related : "<%= t ".mobile.related" %>"
+			},
+			social : {
+				title : 	"<%= t ".social.title"%>",
+				text: "<%= t ".social.text" %>".split('&quot;'),
+				related : "<%= t ".social.related" %>"
+			},
+			trusted : {
+				title : 	"<%= t ".trusted.title" %>",
+				text : "<%= t(".trusted.text")%>".split('&quot;'),
+				related : "<%= t ".trusted.related" %>"
+			},
+			open : {
+				title : 	"<%= t ".open.title" %>",
+				text: "<%= t ".open.text" %>".split('&quot;'),
+				related : "<%= t ".open.related" %>"
+			}
+		} 
+	}
+	
+	function loadValues(tabName){
+		$('#hiw_textcontent .title').text(hiw.tabs[tabName].title);
+		
+		var text = hiw.tabs[tabName].text;
+		$('#hiw_textcontent .content').html('');
+		for(var prop in text){
+			if(text[prop] != '[' && text[prop] != ', ' && text[prop] != ']'){
+				$('#hiw_textcontent .content').append('<p>'+text[prop]+'</p>');
+			}
+		}
+	}
 	
 	function doHighlight(tabName){
 		$('.tabSelected').removeClass('tabSelected')
@@ -12,7 +49,7 @@
 	}
 	
 	$(document).ready(function(){
-		$('.roundCorners').corner('5px');
+		
 		
 		$('#graphic li:not(".tabSelected")').live('mouseover mouseout',function(event){
 			if(event.type == 'mouseover'){	
@@ -21,17 +58,19 @@
 				$(this).removeClass('hover');
 			}
 		});
-		$('#graphic li').live('click',function(){
+		$('#graphic li').live(clickEvent,function(){
 			$('#graphic li.tabSelected').removeClass('active hover tabSelected');
 			$('#graphtabs a.active').removeClass('active');
 			$(this).addClass('active tabSelected');
 		});
-		$('#graphtabs a:not(".active")').live('click',function(){
+		
+		$('#graphtabs a:not(".active")').live(clickEvent,function(){
 			$('#graphic li.tabSelected').removeClass('active tabSelected');
 			$('#graphtabs a.active').removeClass('active');
 			$(this).addClass('active');
 			console.info($(this).text());
 			doHighlight($(this).text().toLowerCase());
+			loadValues($(this).text().toLowerCase());
 		});
 
 	});

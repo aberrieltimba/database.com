@@ -1,0 +1,141 @@
+#pricingBody{
+	background: url("../images/pricing/content-back.png") 0 60px repeat;
+	position: relative;
+}
+#pricingBody .column{
+	border-right: 1px solid #ccc;
+}
+
+#pricingBody .grid_2{
+	width: 160px
+}
+#pricingBody .grid_4{
+	width: 316px
+}
+
+.gutterPadding{
+	margin:0;
+	padding:0;
+	width:320px;
+	/*padding: 0 9px 0 10px;*/
+}
+
+.pricingheader .cat {
+    font-size: 1.6em;
+
+}
+.pricingheader .sign {
+    font-size: 1.6em;
+}
+.pricingheader .price {
+    font-size: 3.4em;
+    
+}
+
+.pricingheader {
+    color: #878787;
+	text-align:center;
+	font-weight: bold;
+	border-bottom: 1px solid #ccc;
+	
+	margin:0 0 10px 0;
+}
+.pricingslider {
+	margin:0 auto;
+	position: relative;
+}
+.pricingslider .img{
+	
+}
+
+.pricingslider .cursor{
+	background: url("../images/pricing/slidecursor.png") repeat scroll 0 0 transparent;
+	color: white;
+    cursor: pointer;
+    height: 47px;
+    left: 30px;
+    padding: 10px 0 0 30px;
+    position: absolute;
+    bottom:0;
+    width: 79px;
+	font-weight: bold;
+}
+
+.pricingslider .cursor .label{
+	font-size:1.4em;
+}
+
+.pricingslider .cursor .amount{
+	font-size:2em;
+}
+
+.pricingdesc {
+	line-height:1.6em;
+}
+
+.pricingdesc {
+	font-size:1.2em;
+	color:#878787;
+}
+
+.pricingdesc b{
+	color:#000;
+}
+
+.pricingdesc span{
+	
+}
+
+.pricingdesc a{
+	color:#0097D4;
+}
+.pricingdesc img{
+	float: left;
+	margin : 0 5px 0 0;
+}
+
+.pricingheader,
+.pricingslider,
+.pricingdesc{
+	padding: 10px 10px;
+}
+
+#pricingtotal{
+	float: none;
+    height: 100%;
+    position: absolute;
+	
+	background:#ffffff;
+}
+
+#pricingtotal ul{
+	list-style: none;
+	padding: 0;
+}
+
+#pricingtotal ul li {
+	background: url("../images/pricing/bluebullet.png") no-repeat left center;
+	padding-left: 15px;
+	margin-bottom: 5px;
+	}
+
+#pricingtotal .pricingheader {
+	text-align:right;
+}
+
+#pricingtotal .pricingheader .sign,
+#pricingtotal .pricingheader .price {
+    color: #0097D4;
+}
+
+#pricingtotal .pricingdesc {
+	padding: 10px 30px;
+}
+
+#pricingtotal .signup {
+	position: absolute;
+	bottom: 30px;
+	line-height:1.6em;
+}
+
+
