@@ -11,8 +11,42 @@ body{
 	
 	background:#FFF url(../images/template/grayback.png) repeat-x;
 }
-a:link img{
+a img{
 	border:0;
+}
+.roundCorners{
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+#contactDialog{
+	display:none;
+	z-index : 10;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 100%;
+}
+.overlay{
+	position: aboslute;
+	z-index : 10;
+	background: #000;	
+	width: 100%;
+	opacity:.5;
+	height: 100%;
+}
+.modal{
+	position: absolute;
+	z-index: 20;
+	left : 50%;
+	top: 50%;
+	margin: 0;
+	border:1px solid #CCC;
+	background:#eee;
+	
+	width:0;
+	height:0;
+	text-align:center;
 }
 /* Page Header */
 #dbdcHeader{
@@ -20,15 +54,13 @@ a:link img{
     border-bottom: 4px solid #4CB0D8;
     height: 89px;
 }
-
 #dbdcLogo{
-	margin: 20px 5px;
+	margin: 20px 0;
 	display:block;
 	text-decoration:none;
 }
 #dbdcLogo img{
 	float:left;
-	margin: 0 10px;
 }
 #dbdcLogo .text {
 	color: white;
@@ -59,6 +91,7 @@ a:link img{
     height: 31px;
     padding: 0 10px;
     width: 110px;
+	text-align:center;
 }
 #authbox a{
 	font-weight:normal!important;
@@ -110,12 +143,20 @@ ul.hmenu li{
 .padding_0_0_0_10{padding:0 0 0 10px;}
 .margin_0_0_0_10{margin:0 0 0 10px;}
 .margin_0_0_0_20{margin:0 0 0 20px;}
+.noMarginRight{margin-right:0;}
+.noMarginLeft{margin-left:0;}
 
 .relative{position:relative}
 .contentBox{
 	border:1px solid #CCC;
 	background:#fff;
 }
+.contentBoxGray{
+	border:1px solid #CCC;
+	background:#eee;
+}
+.backWhite{background:#fff!important;}
+.backGray{background:#fbfbfb!important;}
 #newsBar{
 	height:38px;
 	background:#FFF url(../images/template/nb_back.png) repeat-x;

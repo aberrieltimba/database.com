@@ -2,6 +2,7 @@
 <html>
 	<head>
 		<title><%= yield(:pageTitle) %></title>
+		<%= favicon_link_tag("favicon.ico") %>
 		<!-- Style Definition -->
 		<%= stylesheet_link_tag("grid") %>
 		<%= stylesheet_link_tag("layout") %>
@@ -14,22 +15,35 @@
 		<%= javascript_include_tag("cuffon") %>
 		<%= javascript_include_tag("helveticaLike_400.font") %>
 		<script type="text/javascript">
-
+			
 			var ua = navigator.userAgent,
 			clickEvent = (ua.match(/iPad/i)) ? "touchstart" : "click";
-
+			
 			//Cufon.replace('#dbdcHeader', {fontFamily:'Droid Sans', hover: true});
 			Cufon.replace('.helveticaLike', {fontFamily:'helveticaLike', hover: true});
-
+			
 		</script>
 		<!-- Script Definition -->
 		<%= javascript_include_tag("jquery-1.6.2.min") %>
 		<%= javascript_include_tag("jquery.easing") %>
 		<%= javascript_include_tag("jquery.simplemodal.1.4.1.min") %>
 		<%= javascript_include_tag("jquery.validate.min") %>
+		<%= javascript_include_tag("DD_roundies_0.0.2a-min") %>
 		<%= yield(:customLibs) %>
 		<script>
+			function shareTweet(){
+				window.open("http://twitter.com/share?url=http%3A%2F%2Fdatabase.com&amp;via=databasedotcom&related=databasedotcom&text=Follow%20the%20most%20Trusted%20Cloud","Share Database.com","menubar=1,resizable=1,width=450,height=250");
+			}
+			function shareFb(){
+				u='http://www.database.com/';
+				t='Share Database.com';
+				window.open('http://www.facebook.com/sharer.php?u='+encodeURIComponent(u)+'&amp;t='+encodeURIComponent(t),'sharer','toolbar=0,status=0,width=626,height=436');return false;
+			
+			}
 			$(document).ready(function(){
+				
+				DD_roundies.addRule('.roundCorners', '5px');
+				
 				$('#boxes div').hover(
 					function(){
 					$(this).addClass('hover');
@@ -51,35 +65,31 @@
 			<div class="row">
 				<div class='column grid_5'>
 					<a id="dbdcLogo" href="/">
-						<%= image_tag("template/headercloud.png") %>
-						<span class="text">
-							<span class="product helveticaLike">database.com</span>
-							<br />
-							<span class="slogan helveticaLike">The world&#39;s most trusted cloud.</span>
-						</span>
+						<%= image_tag("template/databaselogo.png") %>
 					</a>
 				</div>
 				<div class='navMenu column grid_7'>
-
-					<span id="authbox" class="floatright margin_0_5 cascade">
+					
+					<span id="authbox" class="floatright margin_0_5">
 						<a href="Javascript:;">Login </a>
+						&nbsp;|&nbsp; 
 						<a href="Javascript:;" onclick="$('#registerform').modal();">Signup</a>
 					</span>
-
+					
 					<span class="floatright margin_0_5 cascade">
 						<%= link_to "How it Works" , {:controller => "site", :action => "howitworks" ,:locale => I18n.locale} %>
-						<a href="Javascript:;">Pricing</a>
+						<%= link_to "Pricing" , {:controller => "site", :action => "pricing" ,:locale => I18n.locale} %>
 						<a href="Javascript:;">Blog</a>
 						<a href="Javascript:;">Resources</a>
 						<a href="Javascript:;">Support</a>
 					</span>
-
+					
 
 				</div>
 				<div  class='column grid_2'>
-
+					
 				</div>
-			</div>
+			</div>	
 		</div>
 		<br />
 		<%= yield %>
