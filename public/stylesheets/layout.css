@@ -96,6 +96,9 @@ a img{
 #authbox a{
 	font-weight:normal!important;
 }
+span#hlinks>span.on{display:inline-block;height:69px;background:url(/images/template/menuarrow.png) no-repeat scroll center bottom transparent;}
+span#hlinks>span.on>a{color:white;}
+
 /* Page Body */
 #pageBody{
 	height:100%;

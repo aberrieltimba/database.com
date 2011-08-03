@@ -15,13 +15,13 @@
 		<%= javascript_include_tag("cuffon") %>
 		<%= javascript_include_tag("helveticaLike_400.font") %>
 		<script type="text/javascript">
-			
+
 			var ua = navigator.userAgent,
 			clickEvent = (ua.match(/iPad/i)) ? "touchstart" : "click";
-			
+
 			//Cufon.replace('#dbdcHeader', {fontFamily:'Droid Sans', hover: true});
 			Cufon.replace('.helveticaLike', {fontFamily:'helveticaLike', hover: true});
-			
+
 		</script>
 		<!-- Script Definition -->
 		<%= javascript_include_tag("jquery-1.6.2.min") %>
@@ -38,12 +38,12 @@
 				u='http://www.database.com/';
 				t='Share Database.com';
 				window.open('http://www.facebook.com/sharer.php?u='+encodeURIComponent(u)+'&amp;t='+encodeURIComponent(t),'sharer','toolbar=0,status=0,width=626,height=436');return false;
-			
+
 			}
 			$(document).ready(function(){
-				
+
 				DD_roundies.addRule('.roundCorners', '5px');
-				
+
 				$('#boxes div').hover(
 					function(){
 					$(this).addClass('hover');
@@ -61,36 +61,8 @@
 	</head>
 
 	<body>
-		<div id="dbdcHeader">
-			<div class="row">
-				<div class='column grid_5'>
-					<a id="dbdcLogo" href="/">
-						<%= image_tag("template/databaselogo.png") %>
-					</a>
-				</div>
-				<div class='navMenu column grid_7'>
-					
-					<span id="authbox" class="floatright margin_0_5">
-						<a href="Javascript:;">Login </a>
-						&nbsp;|&nbsp; 
-						<a href="Javascript:;" onclick="$('#registerform').modal();">Signup</a>
-					</span>
-					
-					<span class="floatright margin_0_5 cascade">
-						<%= link_to "How it Works" , {:controller => "site", :action => "howitworks" ,:locale => I18n.locale} %>
-						<%= link_to "Pricing" , {:controller => "site", :action => "pricing" ,:locale => I18n.locale} %>
-						<a href="Javascript:;">Blog</a>
-						<a href="Javascript:;">Resources</a>
-						<a href="Javascript:;">Support</a>
-					</span>
-					
+        <%= render "header" %>
 
-				</div>
-				<div  class='column grid_2'>
-					
-				</div>
-			</div>	
-		</div>
 		<br />
 		<%= yield %>
 		<br />
