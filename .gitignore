@@ -1,5 +1,6 @@
 .bundle
 db/*.sqlite3
+db/apicounter
 log/*.log
 tmp/
 thumbs.db

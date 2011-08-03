@@ -1,5 +1,5 @@
 DatabaseCom::Application.routes.draw do
-	
+
 	constraints ({:subdomain=>/trust/}) do
 		match "/" => "trust#home"
 		match "/home" => "trust#home"
@@ -16,11 +16,9 @@ DatabaseCom::Application.routes.draw do
 
 		match "/*anything" => "trust#pagenotfound"
 	end
-	
-	root :to => "site#index" 
-	match ':locale' => 'site#index'
-	scope "(:locale)", :locale => /en|es/ do
-		match ":action" => "site#:action"
-	end
+
+    match "/:locale" => "site#index", :constraints => {:locale => /en|es/}
+    match "(/:locale)/:action", :controller => "site", :constraints => {:locale => /en|es/}
+    root :to => "site#index"
 
 end

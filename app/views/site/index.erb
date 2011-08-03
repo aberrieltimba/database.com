@@ -20,12 +20,9 @@
 						<%= image_tag("slider/mobile.png") %>
 					</div>
 					<div class="text">
-						<h2>Ready, Set, Deploy.</h2>
-						<h3><%= image_tag("dbdc/smallgear.png") %> Going Mobile has never been this easy.</h3>
-						<span>
-							Access your data from antwhere, on any device.The integrated capabilities of database.com  help you quickly build robust mobile application - and deploy in record time. 
-							<a href="javascript:;">Read More ></a>
-						</span>
+						<h2><%= t ".slider_mobile_title" %></h2>
+						<h3><%= image_tag("dbdc/smallgear.png") %> <%= t ".slider_mobile_subtitle" %></h3>
+						<span><%= t ".slider_mobile_text" %> <a href="javascript:;"><%= t ".read_more" %> ></a></span>
 					</div>
 				</div>
 				<div class="slideItem">
@@ -33,12 +30,9 @@
 						<%= image_tag("slider/social.png") %>
 					</div>
 					<div class="text">
-						<h2>Tweet, share, promote, Like, and wrable.</h2>
-						<h3><%= image_tag("dbdc/smallgear.png") %> Become social just go easier</h3>
-						<span>
-							Social application are changin how we collaborate. Database.com makes it easy to build social business applications that enable a new level of collaboration and productivity.
-							<a href="javascript:;">Read More ></a>
-						</span>
+						<h2><%= t ".slider_social_title" %></h2>
+						<h3><%= image_tag("dbdc/smallgear.png") %> <%= t ".slider_social_subtitle" %></h3>
+						<span><%= t ".slider_social_text" %> <a href="javascript:;"><%= t ".read_more" %> ></a></span>
 					</div>
 				</div>
 				<div class="slideItem">
@@ -46,12 +40,9 @@
 						<%= image_tag("slider/trusted.png") %>
 					</div>
 					<div class="text">
-						<h2>You&#039;ll sleep better on our cloud.</h2>
-						<h3>450,345,890  transactions performed today</h3>
-						<span>
-							The world&#039;s more trustred and secure database2. More than 97,700 organizations already rely on it every day, including some of the world&#039;s largest banks, government agencies, and healthcare providers.
-							<a href="javascript:;">Read More ></a>
-						</span>
+						<h2><%= t ".slider_trusted_title" %></h2>
+						<h3><%= t ".slider_trusted_subtitle", :apicounter => number_with_delimiter(@apicounter) %></h3>
+						<span><%= t ".slider_trusted_text" %> <a href="javascript:;"><%= t ".read_more" %> ></a></span>
 					</div>
 				</div>
 				<div class="slideItem">
@@ -59,12 +50,9 @@
 						<%= image_tag("slider/open.png") %>
 					</div>
 					<div class="text">
-						<h2>Any language. Any platform. Any device.</h2>
-						<h3><%= image_tag("dbdc/smallgear.png") %> Our cloud is at your service.</h3>
-						<span>
-							Database.com provides the perfect solution for developing and running large-scale, multi-tiered, scalable, reliable, and secure network applications. 
-							<a href="javascript:;">Read More ></a>
-						</span>
+						<h2><%= t ".slider_open_title" %></h2>
+						<h3><%= image_tag("dbdc/smallgear.png") %> <%= t ".slider_open_subtitle" %></h3>
+						<span><%= t ".slider_open_text" %> <a href="javascript:;"><%= t ".read_more" %> ></a></span>
 					</div>
 				</div>
 			</div>
