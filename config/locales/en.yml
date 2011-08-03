@@ -48,8 +48,8 @@ en:
    postalcode: "Postal Code:"
    company: "Company:"
 
-   devforcemembership: "Developer Force Membership"
-   devforcedescription: "A free Developer Force membership is built into your registration, putting key Force.com technical information and free developer tools at your fingertips."
+   usernametitle: "Database.com Username"
+   usernamedescription: "Your username must be in the form of an email address, which can be actual or hypothetical. For example, you can use something like mike@db.data.  All email correspondence related to this account will be sent to the address provided in the \"Email Address\" field above."
    username: "Username:"
 
    foryoursecurity: "For your security"

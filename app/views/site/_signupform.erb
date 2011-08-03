@@ -46,17 +46,17 @@ function beforeSubmit(){
 		<p><%= label_tag :FirstName, raw(t(".firstname") + req) %><%= text_field_tag :FirstName %></p>
 		<p><%= label_tag :LastName, raw(t(".lastname") + req) %><%= text_field_tag :LastName %></p>
 		<p><%= label_tag :Email, raw(t(".email") + req) %><%= text_field_tag :Email %></p>
-		<p><%= label_tag :JobRole, raw(t(".jobrole") + req) %><%= select_tag :JobRole, options_for_select(job_role_list)  %></p>
+		<p><%= label_tag :DeveloperJobRole, raw(t(".jobrole") + req) %><%= select_tag :DeveloperJobRole, options_for_select(job_role_list)  %></p>
 	<% end %>
 
 	<%= field_set_tag t(".aboutyourcompany") do %>
 		<p><%= label_tag :Country, raw(t(".country") + req) %><%= select_tag :Country, options_for_select(country_list, "US") %></p>
-		<p><%= label_tag :PostalCode, raw(t(".postalcode") + req) %><%= text_field_tag :PostalCode %></p>
+		<p><%= label_tag :CompanyPostalCode, raw(t(".postalcode") + req) %><%= text_field_tag :CompanyPostalCode %></p>
 		<p><%= label_tag :Company, raw(t(".company") + req) %><%= text_field_tag :Company %></p>
 	<% end %>
 
-	<%= field_set_tag t(".devforcemembership") do %>
-		<p><%=t ".devforcedescription" %></p>
+	<%= field_set_tag t(".usernametitle") do %>
+		<p><%=t ".usernamedescription" %></p>
 		<p><%= label_tag :UserUsername, raw(t(".username") + req) %><%= text_field_tag :UserUsername %></p>
 	<% end %>
 
@@ -80,9 +80,9 @@ $(document).ready(function() {
 			FirstName: "required",
 			LastName: "required",
 			Email: { required: true, email: true },
-			JobRole: "required",
+			DeveloperJobRole: "required",
 			Country: "required",
-			PostalCode: "required",
+			CompanyPostalCode: "required",
 			Company: "required",
 			UserUsername: { required: true, email: true },
 			msa: "required"
@@ -91,9 +91,9 @@ $(document).ready(function() {
 			FirstName: "<%=t ".reqfirstname"%>",
 			LastName: "<%=t ".reqlastname"%>",
 			Email: "<%=t ".reqemail"%>",
-			JobRole: "<%=t ".reqjobrole"%>",
+			DeveloperJobRole: "<%=t ".reqjobrole"%>",
 			Country: "<%=t ".reqcountry"%>",
-			PostalCode: "<%=t ".reqpostalcode"%>",
+			CompanyPostalCode: "<%=t ".reqpostalcode"%>",
 			Company: "<%=t ".reqcompany"%>",
 			UserUsername: { required: "<%=t ".requsername"%>", email: "<%=t ".usernameisemail"%>" },
 			msa: "<%=t ".reqmsa"%>"
