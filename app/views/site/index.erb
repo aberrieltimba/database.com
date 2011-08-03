@@ -13,7 +13,7 @@
 			</ul>
 		</div>
 		<br />
-		<div id="SliderWrapper">			
+		<div id="SliderWrapper">
 			<div id="EasingSlider">
 				<div class="slideItem">
 					<div class="background">
@@ -22,7 +22,7 @@
 					<div class="text">
 						<h2><%= t ".slider_mobile_title" %></h2>
 						<h3><%= image_tag("dbdc/smallgear.png") %> <%= t ".slider_mobile_subtitle" %></h3>
-						<span><%= t ".slider_mobile_text" %> <a href="javascript:;"><%= t ".read_more" %> ></a></span>
+						<span><%= t ".slider_mobile_text" %> <a href="javascript:;"><i><%= t ".read_more" %></i></a></span>
 					</div>
 				</div>
 				<div class="slideItem">
@@ -32,7 +32,7 @@
 					<div class="text">
 						<h2><%= t ".slider_social_title" %></h2>
 						<h3><%= image_tag("dbdc/smallgear.png") %> <%= t ".slider_social_subtitle" %></h3>
-						<span><%= t ".slider_social_text" %> <a href="javascript:;"><%= t ".read_more" %> ></a></span>
+						<span><%= t ".slider_social_text" %> <a href="javascript:;"><i><%= t ".read_more" %></i></a></span>
 					</div>
 				</div>
 				<div class="slideItem">
@@ -42,7 +42,7 @@
 					<div class="text">
 						<h2><%= t ".slider_trusted_title" %></h2>
 						<h3><%= t ".slider_trusted_subtitle", :apicounter => number_with_delimiter(@apicounter) %></h3>
-						<span><%= t ".slider_trusted_text" %> <a href="javascript:;"><%= t ".read_more" %> ></a></span>
+						<span><%= t ".slider_trusted_text" %> <a href="javascript:;"><i><%= t ".read_more" %></i></a></span>
 					</div>
 				</div>
 				<div class="slideItem">
@@ -52,7 +52,7 @@
 					<div class="text">
 						<h2><%= t ".slider_open_title" %></h2>
 						<h3><%= image_tag("dbdc/smallgear.png") %> <%= t ".slider_open_subtitle" %></h3>
-						<span><%= t ".slider_open_text" %> <a href="javascript:;"><%= t ".read_more" %> ></a></span>
+						<span><%= t ".slider_open_text" %> <a href="javascript:;"><i><%= t ".read_more" %></i></a></span>
 					</div>
 				</div>
 			</div>
@@ -64,25 +64,25 @@
 <div class="row">
 	<div class='column grid_12'>
 		<div id="newsBar">
-		
+
 			<div class="floatleft">
 				<%= image_tag("template/nb_rcorner.png") %>
 				<span class="margin_0_10">
-					<b>Latest news</b> 
+					<b>Latest news</b>
 					&nbsp;&nbsp;|&nbsp;&nbsp;
 					Webinar: Building a database in under 3 minutes
-				</span>	
+				</span>
 			</div>
-			
+
 			<div class="floatright">
 				<span class="margin_0_10">
-					<b>Free database:</b> 
+					<b>Free database:</b>
 					&nbsp;
 					Get up and running minutes
-				</span>	
+				</span>
 				<a href="javascript:;" class="signup" onclick="$('#registerform').modal();"><%= image_tag("template/signupButton.png") %></a>
 			</div>
-			
+
 		</div>
 	</div>
 </div>
@@ -92,11 +92,8 @@
 	<!-- Mobile -->
 	<div class='first column grid_3'>
 		<span>
-			<b>Mobile</b>
-			<br />				
-			Custom REST APIs, OAuth, data feeds, access management
-			<br />
-			<a href="javascript:;">Read More</a>
+			<b><%= t ".mobile" %></b><br/>
+			<%= t ".mobile_desc" %> <a href="javascript:;"><%= t(".read_more").gsub(" ","&nbsp;").html_safe %></a>
 		</span>
 		<div class="icon">
 			<%= image_tag("template/mobileico.png") %>
@@ -105,11 +102,8 @@
 	<!-- Social -->
 	<div class='column grid_3'>
 		<span>
-			<b>Social</b>
-			<br />				
-			Profiles, subscriptions, social graph, status updates, data feeds
-			<br />
-			<a href="javascript:;">Read More</a>
+			<b><%= t ".social" %></b><br/>
+			<%= t ".social_desc" %> <a href="javascript:;"><%= t(".read_more").gsub(" ","&nbsp;").html_safe %></a>
 		</span>
 		<div class="icon">
 			<%= image_tag("template/socialico.png") %>
@@ -118,11 +112,8 @@
 	<!-- Trusted -->
 	<div class='column grid_3'>
 		<span>
-			<b>Trusted</b>
-			<br />				
-			Proven, secure, reliable, and highly-available infrastr
-			<br />
-			<a href="javascript:;">Read More</a>
+			<b><%= t ".trusted" %></b><br/>
+			<%= t ".trusted_desc" %> <a href="javascript:;"><%= t(".read_more").gsub(" ","&nbsp;").html_safe %></a>
 		</span>
 		<div class="icon">
 			<%= image_tag("template/trustedico.png") %>
@@ -131,11 +122,8 @@
 	<!-- Open -->
 	<div class='last column grid_3'>
 		<span>
-			<b>Open</b>
-			<br />				
-			REST, SOAP, bulk and streaming APIs. SAML, OAuth  Read mor
-			<br />
-			<a href="javascript:;">Read More</a>
+			<b><%= t ".open" %></b><br/>
+			<%= t ".open_desc" %> <a href="javascript:;"><%= t(".read_more").gsub(" ","&nbsp;").html_safe %></a>
 		</span>
 		<div class="icon">
 			<%= image_tag("template/openico.png") %>

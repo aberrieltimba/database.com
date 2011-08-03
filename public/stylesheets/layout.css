@@ -181,12 +181,14 @@ a.signup{
 }
 #boxes{
 	color:#878787;
-	font-size:1.4em;
+	font-size:1.3em;
 	line-height:1.3em;
 }
 #boxes a{
 	color:#0097d4;
 	text-decoration:none;
+    background: url(/images/trust/link.png) no-repeat scroll right 5px;
+    padding-right:8px;
 }
 #boxes b{
 	color:black;

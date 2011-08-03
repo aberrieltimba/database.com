@@ -48,7 +48,14 @@ en:
    slider_open_title: "Any language. Any platform. Any device."
    slider_open_subtitle: "Our cloud is at your service."
    slider_open_text: "Database.com provides the perfect solution for developing and running large-scale, multi-tiered, scalable, reliable, and secure network applications."
-
+   mobile: "Mobile"
+   mobile_desc: "Custom REST APIs, OAuth, data feeds, access management"
+   social: "Social"
+   social_desc: "Profiles, subscriptions, social graph, status updates, data feeds"
+   trusted: "Trusted"
+   trusted_desc: "Proven, secure, reliable, and highly-available infrastructure"
+   open: "Open"
+   open_desc: "REST, SOAP, bulk and streaming APIs. SAML, OAuth"
 
   signupform:
    aboutyou: "About you"
