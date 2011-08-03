@@ -17,7 +17,7 @@ class SiteController < ApplicationController
 
 	def update_api_counter
 		# read email important contents
-		subject = params[:Subject]
+		subject = params[:subject]
 		plain = params[:plain]
 
 		# validate subject is proper value (to prevent strangers from updating the counter)
