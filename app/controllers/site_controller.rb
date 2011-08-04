@@ -4,8 +4,7 @@ class SiteController < ApplicationController
 
     def index
         # read stored api counter value before rendering
-        @apicounter = 0
-        if File.exists?(API_COUNTER_FILE) then @apicounter = File.read(API_COUNTER_FILE) end
+        @apicounter = System.find(1).apicounter
 	end
 
 	def pricing
@@ -22,13 +21,8 @@ class SiteController < ApplicationController
 
 		# validate subject is proper value (to prevent strangers from updating the counter)
 		if subject == "fe146181-5026-4108-a5c4-17b645d004f9" then
-
             plain = plain.gsub(/[^\d]/,"") #strip all non-digits (this is supposed to be an integer anyway)
-
-			# store value in file
-			f = File.open(API_COUNTER_FILE,"w");
-			f.write(plain)
-			f.close
+            System.update(1, :apicounter => Integer(plain)) # there's only one, always
 		end
 		# render nothing
 		render :layout => nil
