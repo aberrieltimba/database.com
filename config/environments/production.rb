@@ -48,6 +48,6 @@ DatabaseCom::Application.configure do
   config.active_support.deprecation = :notify
 
   # Recaptcha keys
-  ENV['RECAPTCHA_PUBLIC_KEY'] = '6Ld5z8YSAAAAAFtABj2oEb07v-siBUEcgF1CnjJ3'
-  ENV['RECAPTCHA_PRIVATE_KEY'] = '6Ld5z8YSAAAAAEtRCCCGNf-5-Ax0AosadSn_QnYU'
+  ENV['RECAPTCHA_PUBLIC_KEY'] = '6Lfez8YSAAAAAG6jVwqU01h9Mp4Naf95ADYFeP1h'
+  ENV['RECAPTCHA_PRIVATE_KEY'] = '6Lfez8YSAAAAANfo31i6opeSp4ZaKVCq6dV3j71L'
 end
