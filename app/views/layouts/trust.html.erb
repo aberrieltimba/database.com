@@ -8,12 +8,11 @@
 	<%= csrf_meta_tag %>
 </head>
 <body>
-
-    <%= render "trust/header" %>
+    <%= render "header" %>
 	<div id="corpus">
         <div class="row"><%= yield %></div>
     </div>
-    <%= render "trust/accreditations" %>
+    <%= render "accreditations" %>
     
     <%= render "site/footer" %>
 

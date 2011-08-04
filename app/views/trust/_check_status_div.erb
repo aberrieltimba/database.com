@@ -1,0 +1,4 @@
+<div>
+    <h4 class="gear"><%=t :trust_NavStatus %></h4>
+    <p><%=t :trust_descstatus %> <%= link_to t(:trust_checkstatus).gsub(" ","&nbsp;").html_safe, "#{@root}#{I18n.locale}/status" %></p>
+</div>

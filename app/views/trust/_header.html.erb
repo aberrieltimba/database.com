@@ -10,11 +10,11 @@
         statusclass   = action == "status"   ? "on" : "off"
     %>
     <div class="navMenu column">
-        <a class="<%= homeclass %>" href="/home"><%=t :trust_NavHome %></a>
-        <a class="<%= securityclass %>" href="/security"><%=t :trust_NavSecurity %></a>
-        <a class="<%= privacyclass %>" href="/privacy"><%=t :trust_NavPrivacy %></a>
-        <a class="<%= statusclass %>" href="/status"><%=t :trust_NavStatus %></a>
-        <a class="login" href="https://login.database.com"><%=t :trust_NavLogin %></a>
+        <%= link_to t(:trust_NavHome), "#{@root}#{I18n.locale}/home", :class => homeclass %>
+        <%= link_to t(:trust_NavSecurity), "#{@root}#{I18n.locale}/security", :class => securityclass %>
+        <%= link_to t(:trust_NavPrivacy), "#{@root}#{I18n.locale}/privacy", :class => privacyclass %>
+        <%= link_to t(:trust_NavStatus), "#{@root}#{I18n.locale}/status", :class => statusclass %>
+        <%= link_to t(:trust_NavLogin), "https://login.database.com", :class => "login" %>
     </div>
 </div>
 

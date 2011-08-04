@@ -4,8 +4,8 @@
 
 <div id="left">
 	<div class="sidebar-navigation">
-		<a href="/privacy/global-privacy"><%=t :trust_NavGlobalPrivacy %></a>
-		<a href="/privacy/tools"><%=t :trust_privacy_tools %></a>
+        <%= link_to t(:trust_NavGlobalPrivacy), "#{@root}#{I18n.locale}/privacy/global-privacy" %>
+        <%= link_to t(:trust_privacy_tools), "#{@root}#{I18n.locale}/privacy/tools" %>
 	</div>
 </div>
 
@@ -17,10 +17,5 @@
 </div>
 
 <div id="right">
-    <div>
-        <h4 class="warn"><%=t :trust_ReportSuspiciousEmail %></h4>
-        <p><%=t :trust_ReportSuspiciousEmail_Desc %>
-        <a href="/security/reportsecurityissue" target="_blank"
-			title="<%=t :trust_ReportSuspiciousEmail %>"><%=t(:trust_emailus).gsub(" ","&nbsp;").html_safe %></a></p>
-    </div>
+    <%= render "report_security_issue_div" %>
 </div>

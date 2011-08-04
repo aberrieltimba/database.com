@@ -1,6 +1,14 @@
 class TrustController < ApplicationController
   layout "trust"
 
+  # Sets @root variable for link generation.
+  # Links will differ if trust site is accessed
+  # via subdomain (trust.database.com/) or via subfolder (database.com/trust/)
+  before_filter :set_root
+  def set_root
+    @root = /trust\..*/ =~ request.headers["SERVER_NAME"] ? "/" : "/trust/"
+  end
+
   def pagenotfound(exception = nil)
     logger.info "Rendering 404 with exception: #{exception.message}" if exception
 

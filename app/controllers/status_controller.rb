@@ -1,13 +1,13 @@
 class StatusController < ApplicationController
   layout nil
-  
+
   def download_page(file, url)
     begin
       f = File.open(file,File::WRONLY|File::CREAT|File::EXCL)
       @response = Net::HTTP.get_response( URI.parse( url ) )
-      
+
       @response.body.each_line do |line|
-        f.write line.gsub(/(link.*?href|src)=["|']([\w\.\-\/]*)\/([\w\.\-]*)(\?[^\"]*)?["|']/, "\\1=\"\\3\"")
+        f.write line.gsub(/(link.*?href|src)=["|']([\w\.\-\/]*)\/([\w\.\-]*)(\?[^\"]*)?["|']/, "\\1=\"/status/\\3\"")
       end
       f.close
       return true
@@ -22,12 +22,12 @@ class StatusController < ApplicationController
     @path = "tmp/" + file + ".html";
     @temp = @path + ".fetch"
     @doFetch = !(FileTest.exists?(@path) && (Time.new - File.mtime(@path) < (5 * 60)))
-    
+
     if @doFetch and download_page(@temp,url) then
         File.delete(@path) if File.exists?(@path)
         File.rename(@temp, @path)
     end
-    
+
     if File.exists?(@path) then
       return @path
     else

@@ -1,0 +1,5 @@
+<div>
+    <h4 class="warn"><%=t :trust_ReportSuspiciousEmail %></h4>
+    <p><%=t :trust_ReportSuspiciousEmail_Desc %>
+    <%= link_to t(:trust_emailus).gsub(" ","&nbsp;").html_safe, "#{@root}#{I18n.locale}/security/reportsecurityissue", :title => t(:trust_ReportSuspiciousEmail), :target => "_blank" %>
+</div>

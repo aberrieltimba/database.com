@@ -4,10 +4,10 @@
 
 <div id="left">
 	<div class="sidebar-navigation">
-		<a href="/home"><%=t :trust_NavHome %></a>
-		<a href="/security"><%=t :trust_NavSecurity %></a>
-		<a href="/privacy"><%=t :trust_NavPrivacy %></a>
-		<a href="/status"><%=t :trust_NavStatus %></a>
+		<%= link_to t(:trust_NavHome),"#{@root}#{I18n.locale}/home"%>
+		<%= link_to t(:trust_NavSecurity),"#{@root}#{I18n.locale}/security"%>
+		<%= link_to t(:trust_NavPrivacy),"#{@root}#{I18n.locale}/privacy"%>
+		<%= link_to t(:trust_NavStatus),"#{@root}#{I18n.locale}/status"%>
 	</div>
     <br/>
     <%= render "parkerquote" %>
@@ -18,7 +18,7 @@
 		<h1><%=t :trust_404_title %></h1>
 		<p><%=t :trust_404_text %></p>
 		<ul>
-			<li class="link"><a href="/home"><%=t :trust_404_visittrust %></a></li>
+			<li class="link"><a href="#{@root}#{I18n.locale}/home"><%=t :trust_404_visittrust %></a></li>
 			<li class="link"><a href="http://www.database.com"><%=t :trust_404_visitdatabase %></a></li>
 			<li class="link"><a href="http://www.salesforce.com/company/news-press/"><%=t :trust_404_readnews %></a></li>
 		</ul>
@@ -26,8 +26,5 @@
 </div>
 
 <div id="right">
-    <div>
-        <h4 class="gear"><%=t :trust_NavStatus %></h4>
-        <p><%=t :trust_descstatus %> <a href="/trust/status"><%=t(:trust_checkstatus).gsub(" ","&nbsp;").html_safe %></a></p>
-    </div>
+    <%= render "check_status_div" %>
 </div>
