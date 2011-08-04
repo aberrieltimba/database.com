@@ -62,7 +62,7 @@
 }
 
 .pricingslider .cursor .label{
-	font-size:1.2em;
+	font-size:1.4em;
 }
 
 .pricingslider .cursor .amount{
@@ -114,7 +114,7 @@
 }
 
 #pricingtotal ul li {
-	background: url("../images/pricing/bluebullet.png") no-repeat left 7px;
+	background: url("../images/pricing/bluebullet.png") no-repeat left center;
 	padding-left: 15px;
 	margin-bottom: 5px;
 	}
@@ -133,10 +133,9 @@
 }
 
 #pricingtotal .signup {
-	/*position: absolute;
+	position: absolute;
 	bottom: 30px;
-	line-height:1.6em;*/
+	line-height:1.6em;
 }
-#pricingtotal img{float:none}
 
 

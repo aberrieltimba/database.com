@@ -38,7 +38,7 @@
 				min  : 0
 			},
 			getPrice : function(){
-				return Math.round((this.index/100)*10);
+				return Math.round((this.index/100)*0.10);
 			}
 		},
 		records: {
@@ -202,7 +202,7 @@
 		<div class='column grid_2 backGray gutterPadding'>
 			<!-- -->
 			<div class="pricingheader">
-				<span class="cat">Standard Users</span>
+				<span class="cat">Users</span>
 				<br />
 				<span class="sign">$</span>
 				<span class="price">0</span>
@@ -277,7 +277,7 @@
 		<div class='column grid_2 backGray gutterPadding'>
 			<!-- -->
 			<div class="pricingheader">
-				<span class="cat">Transactions</span>
+				<span class="cat">API Calls</span>
 				<br />
 				<span class="sign">$</span>
 				<span class="price">0</span>
@@ -287,7 +287,7 @@
 				<%= image_tag("pricing/slideanchor.png") %>
 				<div class="cursor" jsMap="api">
 					<div class="label">
-						Transactions
+						API calls
 					</div>
 					<span class="amount">0</span>
 				</div>
@@ -295,8 +295,8 @@
 			<!-- -->
 			<div class="pricingdesc">
 				<%= image_tag("pricing/apicalls.png") %>
-				<b>Transactions</b><br />
-				Transactions are the number of API calls that you can make within a month period. API calls are enforced on a rolling 24 hour window equal to the number of Transactions allocated per month divided by 30.
+				<b>API calls</b><br />
+				Transactions are the number of API calls that you can make within a month period. API calls are enforced on a rolling 24 hour window total equal to the number of calls per month divided by 30.
 			</div>
 		</div>
 		<div id="pricingtotal" class='column grid_4 backWhite gutterPadding'>
@@ -312,17 +312,17 @@
 			<div class="pricingdesc">
 				<b>What&#39;s included?</b>
 				<br />
-				<span>Every database.com account includes the following for free:</span>
+				<span>Every databse.com account includes the following for free:</span>
 				<ul>
 					<li>3 Standard Users</li>
 					<li>3 Administration Users</li>
 					<li>100,000 records</li>
-					<li>50,000 Transactions</li>
-					<li>Developer community membership</li>
+					<li>50,000 transactions</li>
+					<li>1 Developer Sandbox (link to sandbox description?)</li>
+					<li>developer community membership</li>
 					<li>Support - Online case submission, 2-business-day responses. <a href="http://www.salesforce.com/services-training/customer-support/">See Premier Success Plans</a> for additional support offerings.</li>
 				</ul>
-				<p>Contact us at 1-800-NO-SOFTWARE (1-800-667-6389 ) for questions or larger resource needs.</p>
-				<p>Once you have access to your free account, you can purchase additional capacity at anytime.</p>
+				<span>Contact us at 1-800-NO-SOFTWARE (1-800-667-6389 ) for questions or larger resource needs.</span>	
 				
 				<div class="signup">
 					<span>Instant access to your free database</span>
