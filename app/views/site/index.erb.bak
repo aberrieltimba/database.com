@@ -55,17 +55,6 @@
 						<span><%= t ".slider_open_text" %> <a href="javascript:;"><i><%= t ".read_more" %></i></a></span>
 					</div>
 				</div>
-				<!-- Cloned First Element for Inifinite Loop -->
-				<div class="slideItem clone">
-					<div class="background">
-						<%= image_tag("slider/mobile.png") %>
-					</div>
-					<div class="text">
-						<h2><%= t ".slider_mobile_title" %></h2>
-						<h3><%= image_tag("dbdc/smallgear.png") %> <%= t ".slider_mobile_subtitle" %></h3>
-						<span><%= t ".slider_mobile_text" %> <a href="javascript:;"><i><%= t ".read_more" %></i></a></span>
-					</div>
-				</div>
 			</div>
 		</div>
 	</div>

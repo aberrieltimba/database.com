@@ -28,7 +28,7 @@ a img{
 	height: 100%;
 }
 .overlay{
-	position: absolute;
+	position: aboslute;
 	z-index : 10;
 	background: #000;	
 	width: 100%;
@@ -96,8 +96,7 @@ a img{
 #authbox a{
 	font-weight:normal!important;
 }
-span#hlinks>span {float:left;background:none;}
-span#hlinks>span.on{height:69px;background:url(/images/template/menuarrow.png) no-repeat scroll center bottom transparent;}
+span#hlinks>span.on{display:inline-block;height:69px;background:url(/images/template/menuarrow.png) no-repeat scroll center bottom transparent;}
 span#hlinks>span.on>a{color:white;}
 
 /* Page Body */
@@ -178,7 +177,7 @@ a.signup{
 #newsBar img{
 	vertical-align: middle;
 	margin: -2px 0 0;
-	background:#ffffff;
+	bacground:#ffffff;
 }
 #boxes{
 	color:#878787;
@@ -207,7 +206,7 @@ a.signup{
 	margin: 0 0 0 10px;
 }
 #boxes>div.last{
-	background: url(../images/template/boxes_rcorner.png)  right top ;
+	background: url(../images/template/boxes_rcorner.png)  right top ;\
 	margin: 0 10px 0 0;
 }
 #boxes>div.first.hover{
@@ -215,7 +214,7 @@ a.signup{
 	margin: 0 0 0 10px;
 }
 #boxes>div.last.hover{
-	background: url(../images/template/boxes_rcorner_hover.png)  right top ;
+	background: url(../images/template/boxes_rcorner_hover.png)  right top ;\
 	margin: 0 10px 0 0;
 }
 #boxes>div.hover{
