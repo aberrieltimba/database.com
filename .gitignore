@@ -4,4 +4,4 @@ db/apicounter
 log/*.log
 tmp/
 thumbs.db
-.bak
+*.bak
