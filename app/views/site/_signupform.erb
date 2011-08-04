@@ -1,46 +1,5 @@
-<script type="text/javascript">
-function beforeSubmit(){
-    // Servlet requires that this field is 'on'. Not '1', not 'true', not 'yes', but 'on'.
-    $("#SubscriptionAgreement").val( $("#msa").val() ? 'on' : 'off' );
-}
-</script>
-
 <div id="registerform" class="grid_8" style="display:none;" >
-  <%= form_tag("http://www.salesforce.com/leadcapture/PartnerSignupServlet", :id => "reg_form", :onSubmit => "beforeSubmit()") do %>
-
-    <%= hidden_field_tag "process_form", "true" %>
-    <%= hidden_field_tag "LeadSource", "Trialforce" %>
-
-    <!-- TODO: Add Signup Config Item Name of Config record as formName -->
-    <%= hidden_field_tag "formName", "db.com" %>
-    <%= hidden_field_tag "CompanyTemplate", "db_default" %>
-    <%= hidden_field_tag "EditionDefinitionUri", "edition:DB.DBEdition" %>
-
-    <!-- TODO: Update Success and Failure Page -->
-    <% @baseurl = "http://" + request.host_with_port + "/" + locale.to_s + "/"%>
-    <%= hidden_field_tag "successPage", @baseurl + "signup_success" %>
-    <%= hidden_field_tag "failPage", @baseurl + "signup_error" %>
-
-    <!-- TODO: Add Product Interest to specify your trialforce solution -->
-    <%= hidden_field_tag "Product_Interest__c", "Database.com" %>
-
-    <!-- TODO: Update Language if needed
-        'en_US' - English
-        'nl_NL' - Dutch
-        'fr' - French
-        'de' - German
-        'it' - Italian
-        'es' - Spanish
-        'sv' - Swedish
-        'pt_BR' - Portuguese  (Brazilian)
-        'ja' - Japanese
-        'zh_CN' - Chinese (Simplified)
-        'zh_TW' - Chinese (Traditional)
-        'ko' - Korean
-        'th' - Thai
-        'fi' - Finnish
-    -->
-    <%= hidden_field_tag "CompanyLanguage", "en_US" %>
+  <%= form_tag("/signup_submit", :id => "reg_form") do %>
 
     <%= field_set_tag t(".aboutyou") do %>
 		<p><%= label_tag :FirstName, raw(t(".firstname") + req) %><%= text_field_tag :FirstName %></p>
@@ -61,8 +20,8 @@ function beforeSubmit(){
 	<% end %>
 
 	<%= field_set_tag t(".foryoursecurity") do %>
+        <p><%= recaptcha_tags %></p>
 		<p><%= check_box_tag :msa %><%= label_tag :msa, t(".iagreemsa", :msa => "<a href='http://www.salesforce.com/company/agreements/developer_edition/'>" + t(".msa") + "</a>").html_safe %></p>
-        <%= hidden_field_tag :SubscriptionAgreement, "off" %>
 	<% end %>
 
 	<p>
