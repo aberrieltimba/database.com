@@ -10,14 +10,12 @@
         statusclass   = action == "status"   ? "on" : "off"
     %>
     <div class="navMenu column">
-        <%= link_to t(:trust_NavHome), "#{@root}#{I18n.locale}/home", :class => homeclass %>
-        <%= link_to t(:trust_NavSecurity), "#{@root}#{I18n.locale}/security", :class => securityclass %>
-        <%= link_to t(:trust_NavPrivacy), "#{@root}#{I18n.locale}/privacy", :class => privacyclass %>
-        <%= link_to t(:trust_NavStatus), "#{@root}#{I18n.locale}/status", :class => statusclass %>
-        <%= link_to t(:trust_NavLogin), "https://login.database.com", :class => "login" %>
+        <span class="<%=homeclass    %>"><%= link_to t(:trust_NavHome), "#{@root}#{I18n.locale}/home" %></span>
+        <span class="<%=securityclass%>"><%= link_to t(:trust_NavSecurity), "#{@root}#{I18n.locale}/security" %></span>
+        <span class="<%=privacyclass %>"><%= link_to t(:trust_NavPrivacy), "#{@root}#{I18n.locale}/privacy" %></span>
+        <span class="<%=statusclass  %>"><%= link_to t(:trust_NavStatus), "#{@root}#{I18n.locale}/status" %></span>
+        <span class="login"><%= link_to t(:trust_NavLogin), "https://login.database.com" %></span>
     </div>
 </div>
-
-<div id="header-arrow" class="row <%= action %>">&nbsp;</div>
 
 </div>

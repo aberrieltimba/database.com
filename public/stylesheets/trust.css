@@ -25,23 +25,13 @@ a{text-decoration:none;}
 #logo img{vertical-align:middle;margin:0 -4px;}
 #logo .text {color:white;text-align:left;}
 #header .navMenu{width:580px;font-size:1.5em;margin:33px 0 0;line-height:2em;text-align:right;}
-#header .navMenu a{font-weight:bold;color:gray;text-align:center;margin-left:20px;}
-#header .navMenu a.on{color:black;}
-#header .navMenu a:hover{ color:white; }
-#header .navMenu a.login {
-    background: url("/images/trust/trust_loginbutton.png");
-    color: white;
-    display: inline-block;
-    font-size: 0.8em;
-    height: 29px;
-    width: 120px;
-}
-
-#header-arrow{ height:17px; margin-top:-10px; background:url(/images/trust/trustarrow.png) no-repeat scroll 0 -100px transparent; }
-#header-arrow.home{ background-position: 500px 0;}
-#header-arrow.security{ background-position: 574px 0;}
-#header-arrow.privacy{ background-position: 652px 0;}
-#header-arrow.status{ background-position: 754px 0;}
+#header .navMenu span{font-weight:bold;text-align:center;margin:0 10px;display:inline-block;vertical-align:top;}
+#header .navMenu span>a{color:gray;}
+#header .navMenu span.on{height:69px;background:url(/images/trust/trustarrow.png) no-repeat scroll center bottom transparent;}
+#header .navMenu span.on>a{color:black;}
+#header .navMenu span:hover>a{ color:white; }
+#header .navMenu span.login {background: url("/images/trust/trust_loginbutton.png");display:inline-block;font-size:0.8em;height:29px;width:120px;margin-right:0;}
+#header .navMenu span.login>a {color: white;}
 
 /* Footer styles */
 #dbdcFooter{
@@ -76,9 +66,9 @@ a{text-decoration:none;}
     -webkit-border-radius: 6px 6px 0px 0px;
     border-radius: 6px 6px 0px 0px;
 }
-#left, #right, #center { vertical-align: top; display: inline-block; margin: 0 8px;}
+#left, #right, #center { vertical-align: top; display: inline-block; margin: 0 10px;float:left;}
 #left, #right { width: 160px; }
-#center { width: 580px; min-height: 440px; border-left: 1px solid lightgray; border-right: 1px solid lightgray;}
+#center { width: 578px; min-height: 440px; border-left: 1px solid lightgray; border-right: 1px solid lightgray;}
 #center a{color:DodgerBlue;}
 
 #corpus ul{padding-left:2px;}
