@@ -11,6 +11,9 @@ body{
 	
 	background:#FFF url(../images/template/grayback.png) repeat-x;
 }
+h1,h2,h3,p{
+	margin:10px 0;
+}
 a img{
 	border:0;
 }
@@ -52,10 +55,10 @@ a img{
 #dbdcHeader{
 	 background: url("../images/template/headerback.png") repeat scroll 0 0 transparent;
     border-bottom: 4px solid #4CB0D8;
-    height: 89px;
+    height: 70px;
 }
 #dbdcLogo{
-	margin: 20px 0;
+	margin:5px 0;
 	display:block;
 	text-decoration:none;
 }
@@ -72,10 +75,10 @@ a img{
 	font-size: 1.2em;
 }
 #dbdcHeader .navMenu{
-	font-size:1.4em;
-	margin-top: 35px;
-	color:#7ad4f9;
-	line-height:2em;
+	color: #7AD4F9;
+    font-size: 1.4em;
+    line-height: 2em;
+    margin-top: 20px;
 }
 #dbdcHeader .navMenu a{
 	color:#7ad4f9;
@@ -97,7 +100,7 @@ a img{
 	font-weight:normal!important;
 }
 span#hlinks>span {float:left;background:none;}
-span#hlinks>span.on{height:69px;background:url(/images/template/menuarrow.png) no-repeat scroll center bottom transparent;}
+span#hlinks>span.on{height:65px;background:url(/images/template/menuarrow.png) no-repeat scroll center bottom transparent;}
 span#hlinks>span.on>a{color:white;}
 
 /* Page Body */
@@ -181,6 +184,7 @@ a.signup{
 	background:#ffffff;
 }
 #boxes{
+	margin: 5px auto;
 	color:#878787;
 	font-size:1.3em;
 	line-height:1.3em;
