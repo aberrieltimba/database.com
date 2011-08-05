@@ -106,7 +106,6 @@ class SiteController < ApplicationController
                '',
                body
            ]
-           logger.debug body
 
            @location = nil
            socket = TCPSocket.open('www.salesforce.com', 80)
@@ -117,7 +116,9 @@ class SiteController < ApplicationController
               break if (line.length <= 2) or (@location != nil)
            end
 
-           redirect_to @location.to_s
+           @return = @location.to_s
+           if /signup_success/ =~ @return then AccountMailer::welcome_email(params).deliver end
+           redirect_to @return
         end
     end
 end
