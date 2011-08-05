@@ -7,7 +7,7 @@ class StatusController < ApplicationController
       @response = Net::HTTP.get_response( URI.parse( url ) )
 
       @response.body.each_line do |line|
-        f.write line.gsub(/(link.*?href|src)=["|']([\w\.\-\/]*)\/([\w\.\-]*)(\?[^\"]*)?["|']/, "\\1=\"/status/\\3\"")
+        f.write line.gsub(/(link.*?href|src)=["|']([\w\.\-\/]*\/)?([\w\.\-]*)(\?[^\"]*)?["|']/, "\\1=\"/status/\\3\"").gsub(/"\/rss\/(\w+)"/,"\"http://trust.salesforce.com/rss/\\1\"")
       end
       f.close
       return true
@@ -32,7 +32,7 @@ class StatusController < ApplicationController
       return @path
     else
       @useOnce = @path + "." + rand(100000).to_s + ".once"
-      download_file(@useOnce, url)
+      download_page(@useOnce, url)
       return @useOnce
     end
   end
