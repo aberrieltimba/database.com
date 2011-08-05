@@ -3,6 +3,7 @@ DatabaseCom::Application.routes.draw do
 	LANGS = /en|es/
 
 	constraints ({:subdomain=>/trust/,:locale=>LANGS}) do
+        match "/" => "trust#home"
 		match "(/:locale)/" => "trust#home"
 		match "(/:locale)/home" => "trust#home"
 		match "(/:locale)/security" => "trust#security"

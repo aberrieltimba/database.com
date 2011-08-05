@@ -8,26 +8,26 @@
 .margin_0_10.cascade a, .margin_0_10{margin:0 10px;}
 
 /* Some global styles */
-body{background:#fff url(/images/template/grayback.png) repeat-x scroll 0 90px;color:#111;margin:0;padding:0;font-family:arial!important;}
+body{background:#fff url(/images/template/grayback.png) repeat-x scroll 0 74px;color:#111;margin:0;padding:0;font-family:arial!important;}
 img{border:none;}
 a{text-decoration:none;}
 
 /* Header styles */
 #header{
-    background: url(/images/trust/trustheaderback.png) repeat;
+    background: url(/images/trust/trustheaderback.png) repeat scroll bottom;
     border-bottom:1px solid white;
-    height:89px;
+    height:73px;
     text-align:center;
     font-size:62%;
 }
 
-#logo {width:380px;margin:14px 0;padding:0;text-align:left;}
-#logo img{vertical-align:middle;margin:0 -4px;}
+#logo {width:380px;margin:4px 0;padding:0;text-align:left;}
+#logo img{vertical-align:middle;}
 #logo .text {color:white;text-align:left;}
-#header .navMenu{width:580px;font-size:1.5em;margin:33px 0 0;line-height:2em;text-align:right;}
+#header .navMenu{width:580px;font-size:1.5em;margin:20px 0 0;line-height:2em;text-align:right;}
 #header .navMenu span{font-weight:bold;text-align:center;margin:0 10px;display:inline-block;vertical-align:top;}
 #header .navMenu span>a{color:gray;}
-#header .navMenu span.on{height:69px;background:url(/images/trust/trustarrow.png) no-repeat scroll center bottom transparent;}
+#header .navMenu span.on{height:66px;background:url(/images/trust/trustarrow.png) no-repeat scroll center bottom transparent;}
 #header .navMenu span.on>a{color:black;}
 #header .navMenu span:hover>a{ color:white; }
 #header .navMenu span.login {background: url("/images/trust/trust_loginbutton.png");display:inline-block;font-size:0.8em;height:29px;width:120px;margin-right:0;}
@@ -57,7 +57,7 @@ a{text-decoration:none;}
     background: #FBFBFB;
     border:  1px solid lightgray;
     width: 960px;
-    margin: 20px auto 0 auto;
+    margin: 15px auto 0 auto;
     font-size: 0.9em;
     clear: both;
     
