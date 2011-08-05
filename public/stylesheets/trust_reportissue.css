@@ -1,9 +1,9 @@
 div.tilesection {
-	height: 20px; font-weight: bold; margin: 13px 0 17px; padding: 2px 10px;
-	background: url('/images/trust/bg_tilesection.gif') no-repeat top left;
+	height: 18px; width:500px; font-weight: bold; margin: 13px 0 17px; padding: 2px 10px 0; background-color: #EAEAEA;
+	box-shadow: 2px 2px 3px darkgray;-moz-box-shadow: 2px 2px 3px darkgray;-webkit-box-shadow: 2px 2px 3px darkgray;
 }
 
-form#reg_form { margin: 36px 0 94px; }
+form#reg_form { margin: 30px 0; }
 form#reg_form p { margin: 13px 0; }
 form#reg_form label:first-child { width: 100px; float: left; }
 form#reg_form label.error{ color: red; font-size: 0.8em; display: inline-block; vertical-align: top; margin: 2px 4px; }

@@ -4,6 +4,7 @@
 
 <% content_for :pageCss do %>
 	<%= stylesheet_link_tag "trust_reportissue" %>
+	<%= stylesheet_link_tag "trust_reportissue_ie8" if /MSIE 8/ =~ request.user_agent %>
 <% end %>
 
 <% content_for :pageJs do %>
