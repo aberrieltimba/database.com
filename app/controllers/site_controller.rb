@@ -21,11 +21,18 @@ class SiteController < ApplicationController
 
 		# validate subject is proper value (to prevent strangers from updating the counter)
 		if subject == "fe146181-5026-4108-a5c4-17b645d004f9" then
-            plain = plain.gsub(/[^\d]/,"") #strip all non-digits (this is supposed to be an integer anyway)
-            System.update(1, :apicounter => Integer(plain)) # there's only one, always
+			value = 0
+			if /(\d\d\/\d\d\/\d\d):(\d+):/ =~ plain then value = Integer($2) end
+			if value > 0 then
+				System.update(1, :apicounter => value) # there's only one, always
+				@message = "API counter value updated succesfully"
+			else
+				@message = "API counter was not updated: wrong format"
+			end
+			render :layout => nil
+		else
+			render :status => 404
 		end
-		# render nothing
-		render :layout => nil
 	end
 
     # ===========
